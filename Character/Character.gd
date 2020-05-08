@@ -6,7 +6,7 @@ export(String) var character_name
 enum Rank {CIVILIAN = 0, PRIVATE = 1, CORPORAL = 2, CAPTAIN = 3, MAJOR = 4}
 export(Rank) var rank
 
-export var characteristics = []
+export var traits = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,19 +16,19 @@ func _ready():
 func print():
 	print("Name: %s" % name)
 	print("Rank: %s" % rank)
-	for c in characteristics:
+	for t in traits:
 		pass
 	
 
-func _init(_name, _rank, _characteristics):
+func _init(_name, _rank, _traits):
 	character_name = _name
 	rank = _rank
-	characteristics = _characteristics
+	traits = _traits
 
 func opinion_of(other: Character) -> int:
 	var opinion = 0
-	for c in characteristics:
-		opinion += Characteristics.opinion_from(c, self, other)
+	for t in traits:
+		opinion += t.opinion_from(self, other)
 	
 	return opinion
 
