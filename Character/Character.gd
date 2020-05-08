@@ -4,34 +4,31 @@ class_name Character
 export(String) var character_name
 
 enum Rank {CIVILIAN = 0, PRIVATE = 1, CORPORAL = 2, CAPTAIN = 3, MAJOR = 4}
-export(Rank) var rank
+var stats = {}
 
-export var traits = []
+var traits = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-	
+
+func _init(_name: String, _rank: int, _traits: Array):
+	character_name = _name
+	stats["rank"] = _rank
+	traits = _traits
 
 func print():
-	print("Name: %s" % name)
-	print("Rank: %s" % rank)
+	print("Name: %s" % character_name)
+	print("Rank: %s" % stats["rank"])
 	for t in traits:
-		pass
-	
-
-func _init(_name, _rank, _traits):
-	character_name = _name
-	rank = _rank
-	traits = _traits
+		print(t.trait_id)
 
 func opinion_of(other: Character) -> int:
 	var opinion = 0
 	for t in traits:
-		opinion += t.opinion_from(self, other)
+		opinion += t.opinion_of(self, other)
 	
 	return opinion
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

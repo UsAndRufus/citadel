@@ -27,12 +27,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Citadel"
+run/main_scene="res://Test.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-Characteristics="*res://Character/Characteristics.gd"
-TraitParser="*res://Trait/TraitParser.gd"
 
 [rendering]
 

@@ -1,0 +1,57 @@
+{
+	"traits": [
+		{
+			"trait_id": "loves_higher_rank",
+			"trait_name": "",
+			"description": "",
+			"func_name": "loves",
+			"comparator": "gt",
+			"stat": "rank"
+		},
+		{
+			"trait_id": "loves_lower_rank",
+			"trait_name": "",
+			"description": "",
+			"func_name": "loves",
+			"comparator": "lt",
+			"stat": "rank"
+		},
+		{
+			"trait_id": "loves_same_rank",
+			"trait_name": "",
+			"description": "",
+			"func_name": "loves",
+			"comparator": "eq",
+			"stat": "rank"
+		},
+		{
+			"trait_id": "hates_higher_rank",
+			"trait_name": "",
+			"description": "",
+			"func_name": "hates",
+			"comparator": "gt",
+			"stat": "rank"
+		},
+		{
+			"trait_id": "hates_lower_rank",
+			"trait_name": "",
+			"description": "",
+			"func_name": "hates",
+			"comparator": "lt",
+			"stat": "rank"
+		},
+		{
+			"trait_id": "hates_same_rank",
+			"trait_name": "",
+			"description": "",
+			"func_name": "hates",
+			"comparator": "eq",
+			"stat": "rank"
+		}
+	],
+	"lists": [
+		{"higher_rank": ["loves_higher_rank", "hates_higher_rank"]},
+		{"same_rank": ["loves_same_rank", "hates_same_rank"]},
+		{"lower_rank": ["loves_lower_rank", "hates_lower_rank"]}
+	]
+}
