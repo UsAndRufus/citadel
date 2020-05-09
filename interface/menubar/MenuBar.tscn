@@ -1,0 +1,33 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_right = 44.0
+margin_bottom = 14.0
+text = "CITADEL"
+
+[node name="TimeLeft" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -42.5
+margin_right = 42.5
+margin_bottom = 14.0
+text = "30 DAYS LEFT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -74.0
+margin_bottom = 20.0
+text = "Exit game"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://interface/menubar/MenuBar.tscn" type="PackedScene" id=1]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Layout" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuBar" parent="Layout" instance=ExtResource( 1 )]
+anchor_right = 0.0
+margin_right = 1920.0
+
+[node name="Sides" type="HBoxContainer" parent="Layout"]
+margin_top = 4.0
+margin_right = 1920.0
+margin_bottom = 4.0
