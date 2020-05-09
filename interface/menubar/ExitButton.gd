@@ -15,6 +15,10 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func _input(event):
+	if event.is_action("ui_cancel"):
+		get_tree().quit()
+
 
 func _on_ExitButton_pressed():
 	get_tree().quit()

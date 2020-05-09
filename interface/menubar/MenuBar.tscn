@@ -3,7 +3,7 @@
 [ext_resource path="res://interface/menubar/ExitButton.gd" type="Script" id=1]
 [ext_resource path="res://interface/themes/title_theme.tres" type="Theme" id=2]
 [ext_resource path="res://interface/themes/display_theme.tres" type="Theme" id=3]
-[ext_resource path="res://interface/PXUI-Basic/panel_Example1.png" type="Texture" id=4]
+[ext_resource path="res://interface/MenuBackground.tscn" type="PackedScene" id=4]
 
 [node name="MenuBar" type="Control"]
 anchor_right = 1.0
@@ -11,25 +11,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="NinePatchRect" parent="."]
-anchor_right = 1.0
-margin_bottom = 80.0
-texture = ExtResource( 4 )
-region_rect = Rect2( 25, 25, 401, 101 )
-patch_margin_left = 12
-patch_margin_top = 10
-patch_margin_right = 12
-patch_margin_bottom = 10
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Background" parent="." instance=ExtResource( 4 )]
 
 [node name="Title" type="Label" parent="Background"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 25.0
 margin_top = -19.0
-margin_right = 152.0
+margin_right = 177.0
 margin_bottom = 19.0
 theme = ExtResource( 2 )
 text = "CITADEL"
@@ -57,7 +46,7 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -92.0
+margin_left = -117.0
 margin_top = -14.0
 margin_right = -25.0
 margin_bottom = 14.0

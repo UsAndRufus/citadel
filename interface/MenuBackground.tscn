@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://interface/PXUI-Basic/panel_Example1.png" type="Texture" id=4]
+
+[node name="Background" type="NinePatchRect"]
+anchor_right = 1.0
+margin_bottom = 80.0
+texture = ExtResource( 4 )
+region_rect = Rect2( 25, 25, 401, 101 )
+patch_margin_left = 12
+patch_margin_top = 10
+patch_margin_right = 12
+patch_margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}

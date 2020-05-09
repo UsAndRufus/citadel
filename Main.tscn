@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Character/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Trait/TraitParser.gd" type="Script" id=2]
-[ext_resource path="res://Test.gd" type="Script" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=3]
 [ext_resource path="res://interface/UI.tscn" type="PackedScene" id=4]
 
 [node name="Root" type="Node"]
