@@ -1,0 +1,42 @@
+[gd_scene format=2]
+
+[node name="Opinion" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.555115
+margin_right = 0.555176
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="HBoxContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 14.0
+
+[node name="Text" type="Label" parent="Score"]
+margin_right = 102.0
+margin_bottom = 14.0
+text = "Opinion of you: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="Score"]
+margin_left = 106.0
+margin_right = 130.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.254902, 0.807843, 0.054902, 1 )
+text = "+20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Traits" type="Label" parent="."]
+margin_top = 18.0
+margin_right = 1920.0
+margin_bottom = 49.0
+text = " - Bootlicker (+10)
+ - Same faith (+10)"
+__meta__ = {
+"_edit_use_anchors_": false
+}

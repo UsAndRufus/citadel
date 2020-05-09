@@ -2,48 +2,48 @@
 	"traits": [
 		{
 			"trait_id": "loves_higher_rank",
-			"trait_name": "",
-			"description": "",
+			"trait_name": "Bootlicker",
+			"description": "Loves characters of a higher rank",
 			"func_name": "loves",
 			"comparator": "gt",
 			"stat": "rank"
 		},
 		{
 			"trait_id": "loves_lower_rank",
-			"trait_name": "",
-			"description": "",
+			"trait_name": "Humble",
+			"description": "Loves characters of a lower rank",
 			"func_name": "loves",
 			"comparator": "lt",
 			"stat": "rank"
 		},
 		{
 			"trait_id": "loves_same_rank",
-			"trait_name": "",
-			"description": "",
+			"trait_name": "Comrade",
+			"description": "Loves characters of the same rank",
 			"func_name": "loves",
 			"comparator": "eq",
 			"stat": "rank"
 		},
 		{
 			"trait_id": "hates_higher_rank",
-			"trait_name": "",
-			"description": "",
+			"trait_name": "Anti-authoritarian",
+			"description": "Hates characters of a higher rank",
 			"func_name": "hates",
 			"comparator": "gt",
 			"stat": "rank"
 		},
 		{
 			"trait_id": "hates_lower_rank",
-			"trait_name": "",
-			"description": "",
+			"trait_name": "Arrogant",
+			"description": "Hates characters of a lower rank",
 			"func_name": "hates",
 			"comparator": "lt",
 			"stat": "rank"
 		},
 		{
 			"trait_id": "hates_same_rank",
-			"trait_name": "",
-			"description": "",
+			"trait_name": "Ambitious",
+			"description": "Hate characters of the same rank",
 			"func_name": "hates",
 			"comparator": "eq",
 			"stat": "rank"

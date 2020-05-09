@@ -10,8 +10,8 @@ var traits = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position.x = 50 * (randi() % 10)
-	position.y = 50 * (randi() % 10)
+	position.x = clamp(randi() % 1920, 580+100, 1240)
+	position.y = clamp(randi() % 1080, 100, 880)
 
 func init(_name: String, _rank: int, _traits: Array):
 	character_name = _name

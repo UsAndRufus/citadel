@@ -17,10 +17,11 @@ func _ready():
 			print(text)
 
 func generate_characters(amount: int):
+	var names = ["Alice", "Bob", "Fred", "Jemimah"]
 	for i in range(amount):
 		var rank = randi() % 4
 		var character = CharacterScene.instance()
-		character.init(str(i), rank, [$TraitParser.random_trait(),$TraitParser.random_trait()])
+		character.init(names[i], rank, [$TraitParser.random_trait(),$TraitParser.random_trait()])
 		characters.append(character)
 		add_child(character)
 		
