@@ -11,7 +11,7 @@ __meta__ = {
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 anchor_left = 1.0
-margin_left = -480.0
+margin_left = -448.0
 margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -30,5 +30,5 @@ __meta__ = {
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 0.0
-margin_right = 480.0
+margin_right = 448.0
 margin_bottom = 0.0

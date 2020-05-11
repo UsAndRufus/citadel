@@ -1,0 +1,317 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://tower/rooms/circle_door.png" type="Texture" id=1]
+[ext_resource path="res://tower/rooms/gaol.png" type="Texture" id=2]
+[ext_resource path="res://tower/rooms/slate_wall.png" type="Texture" id=3]
+[ext_resource path="res://tower/rooms/arch_tile_end_slate.png" type="Texture" id=4]
+[ext_resource path="res://tower/rooms/arch_tile_1.png" type="Texture" id=5]
+[ext_resource path="res://tower/rooms/brick_wall_tile.png" type="Texture" id=6]
+[ext_resource path="res://tower/rooms/arch_tile_end_brick.png" type="Texture" id=7]
+[ext_resource path="res://tower/rooms/kitchen.png" type="Texture" id=8]
+[ext_resource path="res://tower/rooms/study.png" type="Texture" id=9]
+[ext_resource path="res://tower/rooms/bedroom.png" type="Texture" id=10]
+[ext_resource path="res://tower/rooms/great_hall.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 512, 96 )
+
+[node name="Tower" type="Node2D"]
+
+[node name="FourthFloor" type="Area2D" parent="."]
+position = Vector2( 0, 130 )
+
+[node name="FourthFloorShape" type="CollisionShape2D" parent="FourthFloor"]
+position = Vector2( 512, 7.99994 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="slate_wall4" type="Sprite" parent="FourthFloor"]
+position = Vector2( 648, 6.99988 )
+scale = Vector2( 0.345692, 0.348489 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="slate_wall5" type="Sprite" parent="FourthFloor"]
+position = Vector2( 376, 6.99994 )
+scale = Vector2( 0.345692, 0.348489 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="great_hall" type="Sprite" parent="FourthFloor"]
+position = Vector2( 512, 6.99994 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 11 )
+
+[node name="circle_door2" type="Sprite" parent="FourthFloor"]
+position = Vector2( 512, 7.99976 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 1 )
+
+[node name="ThirdFloor" type="Area2D" parent="."]
+position = Vector2( 0, 321 )
+
+[node name="ThirdFloorShape" type="CollisionShape2D" parent="ThirdFloor"]
+position = Vector2( 512, 7.99994 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="brick_wall_tile3" type="Sprite" parent="ThirdFloor"]
+position = Vector2( 308, 7.00006 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="arch_tile_end_slate3" type="Sprite" parent="ThirdFloor"]
+position = Vector2( 248, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+
+[node name="arch_tile_end_slate4" type="Sprite" parent="ThirdFloor"]
+position = Vector2( 360, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="brick_wall_tile5" type="Sprite" parent="ThirdFloor"]
+position = Vector2( 516, 7.00006 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 6 )
+flip_h = true
+flip_v = true
+
+[node name="study2" type="Sprite" parent="ThirdFloor"]
+position = Vector2( 576, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="brick_wall_tile4" type="Sprite" parent="ThirdFloor"]
+position = Vector2( 724, 7.00006 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 6 )
+flip_h = true
+flip_v = true
+
+[node name="arch_tile_end_slate6" type="Sprite" parent="ThirdFloor"]
+position = Vector2( 664, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+
+[node name="arch_tile_end_slate5" type="Sprite" parent="ThirdFloor"]
+position = Vector2( 776, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="arch_tile_end_slate8" type="Sprite" parent="ThirdFloor"]
+position = Vector2( 456, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+
+[node name="arch_tile_end_slate7" type="Sprite" parent="ThirdFloor"]
+position = Vector2( 568, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="SecondFloor" type="Area2D" parent="."]
+position = Vector2( 0, 512 )
+
+[node name="SecondFloorShape" type="CollisionShape2D" parent="SecondFloor"]
+position = Vector2( 512, 7.99994 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="bedroom" type="Sprite" parent="SecondFloor"]
+position = Vector2( 303, 7.99994 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 10 )
+
+[node name="bedroom2" type="Sprite" parent="SecondFloor"]
+position = Vector2( 527, 7.99994 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="bedroom3" type="Sprite" parent="SecondFloor"]
+position = Vector2( 689, 7.99994 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="arch_tile_end_slate3" type="Sprite" parent="SecondFloor"]
+position = Vector2( 184, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+
+[node name="arch_tile_end_slate" type="Sprite" parent="SecondFloor"]
+position = Vector2( 631, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+
+[node name="arch_tile_2" type="Sprite" parent="SecondFloor"]
+position = Vector2( 407, 0 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 5 )
+offset = Vector2( -6.10352e-05, 22.9883 )
+
+[node name="arch_tile_3" type="Sprite" parent="SecondFloor"]
+position = Vector2( 296, 0 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 5 )
+offset = Vector2( -6.10352e-05, 22.9883 )
+
+[node name="arch_tile_end_slate5" type="Sprite" parent="SecondFloor"]
+position = Vector2( 519, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="slate_wall3" type="Sprite" parent="SecondFloor"]
+position = Vector2( 840, 7.99988 )
+scale = Vector2( 0.345692, 0.348489 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="arch_tile_end_slate8" type="Sprite" parent="SecondFloor"]
+position = Vector2( 743, 7.99988 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="FirstFloor" type="Area2D" parent="."]
+position = Vector2( 0, 704 )
+
+[node name="FirstFloorShape" type="CollisionShape2D" parent="FirstFloor"]
+position = Vector2( 512, 7.99994 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="study" type="Sprite" parent="FirstFloor"]
+position = Vector2( 248, 9 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 9 )
+
+[node name="arch_tile_end_brick" type="Sprite" parent="FirstFloor"]
+position = Vector2( 121, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 7 )
+
+[node name="kitchen2" type="Sprite" parent="FirstFloor"]
+position = Vector2( 563, 7.99988 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 8 )
+
+[node name="kitchen" type="Sprite" parent="FirstFloor"]
+position = Vector2( 791, 7.99988 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="arch_tile_end_slate6" type="Sprite" parent="FirstFloor"]
+position = Vector2( 497, 7.99988 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+
+[node name="arch_tile_end_slate5" type="Sprite" parent="FirstFloor"]
+position = Vector2( 608, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="arch_tile_end_slate" type="Sprite" parent="FirstFloor"]
+position = Vector2( 343, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="arch_tile_end_slate3" type="Sprite" parent="FirstFloor"]
+position = Vector2( 679, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+
+[node name="arch_tile_2" type="Sprite" parent="FirstFloor"]
+position = Vector2( 791, 0 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 5 )
+offset = Vector2( -6.10352e-05, 22.9883 )
+
+[node name="arch_tile_3" type="Sprite" parent="FirstFloor"]
+position = Vector2( 231, 0 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 5 )
+offset = Vector2( -6.10352e-05, 22.9883 )
+
+[node name="arch_tile_end_slate4" type="Sprite" parent="FirstFloor"]
+position = Vector2( 903, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="slate_wall2" type="Sprite" parent="FirstFloor"]
+position = Vector2( 432, 7.99988 )
+scale = Vector2( 0.345692, 0.348489 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="GroundFloor" type="Area2D" parent="."]
+position = Vector2( 0, 896 )
+
+[node name="GroundFloorShape" type="CollisionShape2D" parent="GroundFloor"]
+position = Vector2( 512, 7.99994 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="slate_wall3" type="Sprite" parent="GroundFloor"]
+position = Vector2( 791.825, 8 )
+scale = Vector2( 0.345692, 0.348489 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="slate_wall4" type="Sprite" parent="GroundFloor"]
+position = Vector2( 902.825, 8 )
+scale = Vector2( 0.345692, 0.348489 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="brick_wall_tile" type="Sprite" parent="GroundFloor"]
+position = Vector2( 288, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 6 )
+
+[node name="brick_wall_tile2" type="Sprite" parent="GroundFloor"]
+position = Vector2( 399, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 6 )
+
+[node name="slate_wall" type="Sprite" parent="GroundFloor"]
+position = Vector2( 120, 8 )
+scale = Vector2( 0.345692, 0.348489 )
+texture = ExtResource( 3 )
+
+[node name="gaol" type="Sprite" parent="GroundFloor"]
+position = Vector2( 624, 7.99988 )
+scale = Vector2( 0.345692, 0.348489 )
+texture = ExtResource( 2 )
+
+[node name="circle_door" type="Sprite" parent="GroundFloor"]
+position = Vector2( 623, 7.99976 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 1 )
+
+[node name="arch_tile_end_slate" type="Sprite" parent="GroundFloor"]
+position = Vector2( 232, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+
+[node name="arch_tile_1" type="Sprite" parent="GroundFloor"]
+position = Vector2( 344, -0.00012207 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 5 )
+offset = Vector2( -6.10352e-05, 22.9883 )
+
+[node name="arch_tile_end_slate2" type="Sprite" parent="GroundFloor"]
+position = Vector2( 456, 8 )
+scale = Vector2( 0.346, 0.348 )
+texture = ExtResource( 4 )
+flip_h = true

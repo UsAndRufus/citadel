@@ -22,14 +22,14 @@ __meta__ = {
 }
 
 [node name="Name" type="Label" parent="Container"]
-margin_right = 155.0
+margin_right = 159.0
 margin_bottom = 38.0
 theme = ExtResource( 2 )
 text = "Frederick"
 
 [node name="Rank" type="Label" parent="Container"]
 margin_top = 42.0
-margin_right = 155.0
+margin_right = 159.0
 margin_bottom = 64.0
 text = "Rank: 1"
 __meta__ = {
@@ -41,5 +41,5 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
 margin_top = 68.0
-margin_right = 155.0
-margin_bottom = 149.0
+margin_right = 159.0
+margin_bottom = 141.0
