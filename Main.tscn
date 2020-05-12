@@ -13,7 +13,24 @@ CharacterScene = ExtResource( 1 )
 [node name="TraitParser" type="Node" parent="."]
 script = ExtResource( 2 )
 
-[node name="UI" parent="." instance=ExtResource( 4 )]
+[node name="Window" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Tower" parent="." instance=ExtResource( 5 )]
-position = Vector2( 448, 80 )
+[node name="UI" parent="Window" instance=ExtResource( 4 )]
+
+[node name="TowerControl" type="Control" parent="Window"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Tower" parent="Window/TowerControl" instance=ExtResource( 5 )]

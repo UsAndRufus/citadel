@@ -4,15 +4,20 @@
 [ext_resource path="res://interface/sides/right/CharacterInfo.tscn" type="PackedScene" id=2]
 
 [node name="Side" type="Control"]
+anchor_left = 1.0
 anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -480.0
+margin_right = 0.00012207
+rect_min_size = Vector2( 480, 1080 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
-anchor_left = 1.0
-margin_left = -448.0
-margin_bottom = 1080.0
+anchor_bottom = 1.0
+margin_bottom = 0.0
+rect_scale = Vector2( 1, 1.00699 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -30,5 +35,5 @@ __meta__ = {
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 0.0
-margin_right = 448.0
+margin_right = 480.0
 margin_bottom = 0.0

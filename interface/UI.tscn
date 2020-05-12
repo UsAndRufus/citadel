@@ -13,12 +13,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Side" parent="." instance=ExtResource( 2 )]
+[node name="LeftSide" parent="." instance=ExtResource( 2 )]
 
-[node name="Side2" parent="." instance=ExtResource( 3 )]
+[node name="RightSide" parent="." instance=ExtResource( 3 )]
+margin_left = -448.0
+rect_min_size = Vector2( 448, 1080 )
 
 [node name="MenuBar" parent="." instance=ExtResource( 1 )]
-anchor_right = 0.0
-margin_top = 1.43198
-margin_right = 1920.0
-margin_bottom = 1.43198
+anchor_bottom = 1.0
+margin_right = 0.0

@@ -18,7 +18,7 @@ extents = Vector2( 512, 96 )
 [node name="Tower" type="Node2D"]
 
 [node name="FourthFloor" type="Area2D" parent="."]
-position = Vector2( 0, 130 )
+position = Vector2( -512, -869 )
 
 [node name="FourthFloorShape" type="CollisionShape2D" parent="FourthFloor"]
 position = Vector2( 512, 7.99994 )
@@ -48,7 +48,7 @@ scale = Vector2( 0.346, 0.348 )
 texture = ExtResource( 1 )
 
 [node name="ThirdFloor" type="Area2D" parent="."]
-position = Vector2( 0, 321 )
+position = Vector2( -512, -678 )
 
 [node name="ThirdFloorShape" type="CollisionShape2D" parent="ThirdFloor"]
 position = Vector2( 512, 7.99994 )
@@ -115,7 +115,7 @@ texture = ExtResource( 4 )
 flip_h = true
 
 [node name="SecondFloor" type="Area2D" parent="."]
-position = Vector2( 0, 512 )
+position = Vector2( -512, -487 )
 
 [node name="SecondFloorShape" type="CollisionShape2D" parent="SecondFloor"]
 position = Vector2( 512, 7.99994 )
@@ -180,7 +180,7 @@ texture = ExtResource( 4 )
 flip_h = true
 
 [node name="FirstFloor" type="Area2D" parent="."]
-position = Vector2( 0, 704 )
+position = Vector2( -512, -295 )
 
 [node name="FirstFloorShape" type="CollisionShape2D" parent="FirstFloor"]
 position = Vector2( 512, 7.99994 )
@@ -255,7 +255,7 @@ texture = ExtResource( 3 )
 flip_v = true
 
 [node name="GroundFloor" type="Area2D" parent="."]
-position = Vector2( 0, 896 )
+position = Vector2( -512, -103 )
 
 [node name="GroundFloorShape" type="CollisionShape2D" parent="GroundFloor"]
 position = Vector2( 512, 7.99994 )
