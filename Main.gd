@@ -8,7 +8,7 @@ export(Array) var characters = []
 func _ready():
 	randomize()
 	print("$TraitParser.traits count: %s" % $TraitParser.traits.size())
-	generate_characters(3)
+	generate_characters(4)
 	
 	$Window/UI.set_player(characters[0])
 	$Window/UI.observe_characters(characters)
@@ -22,9 +22,17 @@ func _ready():
 func generate_characters(amount: int):
 	var names = ["Alice", "Bob", "Fred", "Jemimah"]
 	for i in range(amount):
-		var rank = randi() % 4
+		var rank = randi() % 5
+		var alignment = randi() % 2
+		
+		
+		var traits = [$TraitParser.random_trait(),$TraitParser.random_trait()]
+		if alignment == 1:
+			traits.append($TraitParser.get_trait("loves_other_evil"))
+		traits.append($TraitParser.get_trait("hates_other_alignment"))
+		
 		var character = CharacterScene.instance()
-		character.init(names[i], rank, [$TraitParser.random_trait(),$TraitParser.random_trait()])
+		character.init(names[i], rank, alignment, traits)
 		characters.append(character)
 		add_child(character)
 		

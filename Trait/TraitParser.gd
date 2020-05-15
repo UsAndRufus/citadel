@@ -1,6 +1,6 @@
 extends Node
 
-export(Array) var traits
+export(Dictionary) var traits
 
 const PATH = "res://Trait/traits.json"
 
@@ -8,27 +8,30 @@ const PATH = "res://Trait/traits.json"
 func _ready():
 	traits = parse_traits_from_json(PATH)
 	
-	print("Traits: %s", traits)
+	print("Traits: ", traits)
+	
+func random_trait():
+	return traits.values()[randi() % traits.size()]
+	
+func get_trait(id: String) -> Trait:
+	return traits[id]
 	
 func parse_traits_from_json(path: String) -> Array:
 	var dictionary = get_dictionary_from_file(path)
 	
-	var _traits = []
+	var _traits = {}
 	
 	for _trait in dictionary["traits"]:
-		_traits.append(Trait.new(
+		var t = Trait.new(
 			_trait["trait_id"],
 			_trait["trait_name"],
 			_trait["description"],
 			_trait["func_name"],
 			parse_comparator(_trait["comparator"]),
-			_trait["stat"]
-		))
+			_trait["stat"])
+		_traits[_trait["trait_id"]] = t
 	
 	return _traits
-
-func random_trait():
-	return traits[randi() % traits.size()]
 
 func parse_comparator(comparator: String) -> int:
 	match comparator:

@@ -7,6 +7,7 @@ signal deselected(character)
 export(String) var character_name
 
 enum Rank {CIVILIAN = 0, PRIVATE = 1, CORPORAL = 2, CAPTAIN = 3, MAJOR = 4}
+enum Alignment {EVIL = 0, GOOD = 1}
 var stats = {}
 
 var traits = []
@@ -16,9 +17,10 @@ func _ready():
 	position.x = clamp(randi() % 1920, 580+100, 1240)
 	position.y = clamp(randi() % 1080, 100, 880)
 
-func init(_name: String, _rank: int, _traits: Array):
+func init(_name: String, _rank: int, _alignment: int, _traits: Array):
 	character_name = _name
 	stats["rank"] = _rank
+	stats["alignment"] = _alignment
 	traits = _traits
 
 func rank_name() -> String:

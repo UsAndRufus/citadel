@@ -9,7 +9,7 @@ var func_name: String
 var comparator: int
 var stat: String
 
-enum Comparator {GT, LT, GTE, LTE, EQ}
+enum Comparator {GT, LT, GTE, LTE, EQ, NE}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,7 +27,6 @@ func _init(_trait_id: String, _trait_name: String, _description: String,
 	
 func opinion_of(character: Character, other: Character) -> int:
 	return call(func_name, other.stats[stat], character.stats[stat]) as int
-
 
 func loves(stat1: int, stat2: int) -> int:
 	if compare(stat1, stat2):
@@ -53,6 +52,8 @@ func compare(stat1: int, stat2: int) -> bool:
 			return stat1 <= stat2
 		Comparator.EQ:
 			return stat1 == stat2
+		Comparator.NE:
+			return stat1 != stat2
 		_:
 			return false
 
@@ -69,6 +70,8 @@ func _to_string():
 			cmp = "<="
 		Comparator.EQ:
 			cmp = "=="
+		Comparator.NE:
+			cmp = "!="
 		_:
 			cmp = "MISSING_COMPARATOR"
 	
