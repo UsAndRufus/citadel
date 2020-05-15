@@ -11,12 +11,13 @@ func _ready():
 	generate_characters(4)
 	
 	$Window/UI.set_player(characters[0])
+	
 	$Window/UI.observe_characters(characters)
 	
 	for child in characters:
 		child.print()
 		for other in characters:
-			var text = "%s's opinion of %s: %s" % [child.character_name, other.character_name, child.opinion_of(other)]
+			var text = "%s's opinion of %s: %s" % [child.character_name, other.character_name, child.trust_of(other)]
 			print(text)
 
 func generate_characters(amount: int):
@@ -24,7 +25,6 @@ func generate_characters(amount: int):
 	for i in range(amount):
 		var rank = randi() % 5
 		var alignment = randi() % 2
-		
 		
 		var traits = [$TraitParser.random_trait(),$TraitParser.random_trait()]
 		if alignment == 1:

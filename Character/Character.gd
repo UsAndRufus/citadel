@@ -42,19 +42,19 @@ func print():
 	for t in traits:
 		print(t.trait_id)
 
-func opinion_of(other: Character) -> int:
-	var opinion = 0
+func trust_of(other: Character) -> int:
+	var trust = 0
 	for t in traits:
-		opinion += t.opinion_of(self, other)
+		trust += t.trust_of(self, other)
 	
-	return opinion
+	return trust
 
-func trait_opinions(other: Character) -> Dictionary:
-	var trait_opinions = {}
+func trait_trust_scores(other: Character) -> Dictionary:
+	var trait_trust_scores = {}
 	for t in traits:
-		trait_opinions[t.trait_name] = t.opinion_of(self, other)
+		trait_trust_scores[t.trait_name] = t.trust_of(self, other)
 	
-	return trait_opinions
+	return trait_trust_scores
 
 func deselect():
 	emit_signal("deselected", self)

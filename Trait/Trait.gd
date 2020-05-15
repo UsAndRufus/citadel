@@ -25,7 +25,7 @@ func _init(_trait_id: String, _trait_name: String, _description: String,
 	comparator = _comparator
 	stat = _stat
 	
-func opinion_of(character: Character, other: Character) -> int:
+func trust_of(character: Character, other: Character) -> int:
 	return call(func_name, other.stats[stat], character.stats[stat]) as int
 
 func loves(stat1: int, stat2: int) -> int:

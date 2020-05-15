@@ -12,6 +12,7 @@ func _ready():
 	
 func set_player(character: Character):
 	$RightSide/Background/VBoxContainer/CharacterInfo.player_character = character
+	$LeftSide/Background/VBoxContainer/PlayerCharacterInfo.set_player_character(character)
 	
 func observe_characters(characters):
 	for character in characters:
