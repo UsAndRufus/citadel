@@ -36,6 +36,13 @@ func rank_name() -> String:
 		_, Rank.CIVILIAN:
 			return "Civilian"
 
+func alignment_name() -> String:
+	match stats["alignment"]:
+		1:
+			return "Evil"
+		_: 
+			return "Good"
+
 func print():
 	print("Name: %s" % character_name)
 	print("Rank: %s" % stats["rank"])

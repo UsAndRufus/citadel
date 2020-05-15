@@ -31,7 +31,6 @@ __meta__ = {
 }
 
 [node name="CharacterInfo" parent="Background/VBoxContainer" instance=ExtResource( 2 )]
-visible = true
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 0.0

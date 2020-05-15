@@ -27,6 +27,12 @@ func _init(_trait_id: String, _trait_name: String, _description: String,
 	
 func trust_of(character: Character, other: Character) -> int:
 	return call(func_name, other.stats[stat], character.stats[stat]) as int
+	
+func super_loves(stat1: int, stat2: int) -> int:
+	if compare(stat1, stat2):
+		return 50
+	else:
+		return 0
 
 func loves(stat1: int, stat2: int) -> int:
 	if compare(stat1, stat2):

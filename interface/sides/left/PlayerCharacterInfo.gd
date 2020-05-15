@@ -4,7 +4,6 @@ export (PackedScene) var TraitInfoScene
 
 var player_character: Character
 
-
 func set_player_character(character: Character):
 	player_character = character
 	display_player_info()

@@ -52,7 +52,7 @@
 			"trait_id": "loves_other_evil",
 			"trait_name": "Wicked",
 			"description": "Loves other characters who are also evil",
-			"func_name": "loves",
+			"func_name": "super_loves",
 			"comparator": "eq",
 			"stat": "alignment"
 		},

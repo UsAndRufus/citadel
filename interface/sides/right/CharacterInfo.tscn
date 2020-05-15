@@ -27,7 +27,7 @@ __meta__ = {
 
 [node name="TrustScoreContainer" type="VBoxContainer" parent="Container"]
 margin_right = 155.0
-margin_bottom = 141.0
+margin_bottom = 167.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -47,25 +47,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Alignment" type="Label" parent="Container/TrustScoreContainer"]
+margin_top = 68.0
+margin_right = 155.0
+margin_bottom = 90.0
+text = "Alignment: Good"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Trust" parent="Container/TrustScoreContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
-margin_top = 68.0
+margin_top = 94.0
 margin_right = 155.0
-margin_bottom = 141.0
+margin_bottom = 167.0
 
-[node name="Label" type="Label" parent="Container"]
-margin_top = 145.0
+[node name="TraitsHeader" type="Label" parent="Container"]
+margin_top = 171.0
 margin_right = 155.0
-margin_bottom = 183.0
+margin_bottom = 209.0
 theme = ExtResource( 2 )
 text = "Traits"
 
 [node name="TraitsContainer" type="VBoxContainer" parent="Container"]
-margin_top = 187.0
+margin_top = 213.0
 margin_right = 155.0
-margin_bottom = 187.0
+margin_bottom = 213.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
