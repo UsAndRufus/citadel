@@ -10,6 +10,8 @@ func _ready():
 	print("$TraitParser.traits count: %s" % $TraitParser.traits.size())
 	generate_characters(3)
 	
+	$Window/UI.observe_characters(characters)
+	
 	for child in characters:
 		child.print()
 		for other in characters:

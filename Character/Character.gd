@@ -1,6 +1,8 @@
 extends Node2D
 class_name Character
 
+signal clicked(character)
+
 export(String) var character_name
 
 enum Rank {CIVILIAN = 0, PRIVATE = 1, CORPORAL = 2, CAPTAIN = 3, MAJOR = 4}
@@ -38,6 +40,6 @@ func opinion_of(other: Character) -> int:
 
 
 func _on_Character_input_event(_viewport, event, _shape_idx):
-	print("character input")
 	if event.is_action("select"):
 		print("clicked on!")
+		emit_signal("clicked", self)
