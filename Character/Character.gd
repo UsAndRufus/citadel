@@ -18,6 +18,7 @@ func init(_name: String, _rank: int, _traits: Array):
 	stats["rank"] = _rank
 	traits = _traits
 
+
 func print():
 	print("Name: %s" % character_name)
 	print("Rank: %s" % stats["rank"])
@@ -34,3 +35,9 @@ func opinion_of(other: Character) -> int:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Character_input_event(_viewport, event, _shape_idx):
+	print("character input")
+	if event.is_action("select"):
+		print("clicked on!")

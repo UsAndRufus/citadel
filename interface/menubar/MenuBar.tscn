@@ -40,7 +40,7 @@ margin_top = -19.0
 margin_right = 114.5
 margin_bottom = 19.0
 theme = ExtResource( 2 )
-text = "30 DAYS LEFT"
+text = "3 DAYS LEFT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
