@@ -9,6 +9,7 @@ func _ready():
 	randomize()
 	print("$TraitParser.traits count: %s" % $TraitParser.traits.size())
 	generate_characters(4)
+	generate_secrets()
 	
 	$Window/UI.set_player(characters[0])
 	
@@ -35,7 +36,13 @@ func generate_characters(amount: int):
 		character.init(names[i], rank, alignment, traits)
 		characters.append(character)
 		add_child(character)
-		
+
+func generate_secrets():
+	var secret = Secret.new([characters[0]], "Alice likes cheese", [characters[1]])
+	
+	print("secret: ", secret.description)
+	for c in characters:
+		print("%s knows secret: %s" % [c.character_name, str(secret.is_known_by(c))])
 
 func _unhandled_input(event):
 	if event.is_action("select"):

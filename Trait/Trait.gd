@@ -11,10 +11,6 @@ var stat: String
 
 enum Comparator {GT, LT, GTE, LTE, EQ, NE}
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-	
 func _init(_trait_id: String, _trait_name: String, _description: String,
 		  _func_name: String, _comparator: int, _stat: String):
 	trait_id = _trait_id

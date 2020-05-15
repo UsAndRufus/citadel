@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://Character/Character.gd"
 }, {
 "base": "Node",
+"class": "Secret",
+"language": "GDScript",
+"path": "res://Secret/Secret.gd"
+}, {
+"base": "Node",
 "class": "Trait",
 "language": "GDScript",
 "path": "res://Trait/Trait.gd"
 } ]
 _global_script_class_icons={
 "Character": "",
+"Secret": "",
 "Trait": ""
 }
 
@@ -29,6 +35,10 @@ _global_script_class_icons={
 config/name="Citadel"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SecretManager="*res://Secret/SecretManager.gd"
 
 [display]
 
