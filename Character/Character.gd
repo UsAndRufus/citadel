@@ -34,6 +34,13 @@ func opinion_of(other: Character) -> int:
 	
 	return opinion
 
+func trait_opinions(other: Character) -> Dictionary:
+	var trait_opinions = {}
+	for t in traits:
+		trait_opinions[t.trait_name] = t.opinion_of(self, other)
+	
+	return trait_opinions
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -41,5 +48,4 @@ func opinion_of(other: Character) -> int:
 
 func _on_Character_input_event(_viewport, event, _shape_idx):
 	if event.is_action("select"):
-		print("clicked on!")
 		emit_signal("clicked", self)
