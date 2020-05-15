@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/knight_godot_export.tpsheet-c489432cac4976d737155c0f86b31437.res"
+
+[deps]
+
+files=[ "res://Character/Knight/knight_godot_export.sprites/walk 2.tres", "res://Character/Knight/knight_godot_export.sprites/walk 8.tres", "res://Character/Knight/knight_godot_export.sprites/walk 1.tres", "res://Character/Knight/knight_godot_export.sprites/walk 9.tres", "res://Character/Knight/knight_godot_export.sprites/idle 2.tres", "res://Character/Knight/knight_godot_export.sprites/walk 3.tres", "res://Character/Knight/knight_godot_export.sprites/walk 7.tres", "res://Character/Knight/knight_godot_export.sprites/idle 3.tres", "res://Character/Knight/knight_godot_export.sprites/walk 5.tres", "res://Character/Knight/knight_godot_export.sprites/idle 1.tres", "res://Character/Knight/knight_godot_export.sprites/walk 4.tres", "res://Character/Knight/knight_godot_export.sprites/walk 6.tres" ]
+
+source_file="res://Character/Knight/knight_godot_export.tpsheet"
+dest_files=[ "res://.import/knight_godot_export.tpsheet-c489432cac4976d737155c0f86b31437.res", "res://Character/Knight/knight_godot_export.sprites/walk 2.tres", "res://Character/Knight/knight_godot_export.sprites/walk 8.tres", "res://Character/Knight/knight_godot_export.sprites/walk 1.tres", "res://Character/Knight/knight_godot_export.sprites/walk 9.tres", "res://Character/Knight/knight_godot_export.sprites/idle 2.tres", "res://Character/Knight/knight_godot_export.sprites/walk 3.tres", "res://Character/Knight/knight_godot_export.sprites/walk 7.tres", "res://Character/Knight/knight_godot_export.sprites/idle 3.tres", "res://Character/Knight/knight_godot_export.sprites/walk 5.tres", "res://Character/Knight/knight_godot_export.sprites/idle 1.tres", "res://Character/Knight/knight_godot_export.sprites/walk 4.tres", "res://Character/Knight/knight_godot_export.sprites/walk 6.tres" ]
+
+[params]
+

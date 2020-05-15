@@ -1,0 +1,198 @@
+{
+	"textures": [
+		{
+			"image": "worker.png",
+			"size": {
+				"w": 1244,
+				"h": 806
+			},
+			"sprites": [
+				{
+					"filename": "walk6.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 254,
+						"h": 410
+					},
+					"margin": {
+						"x": 8,
+						"y": 0,
+						"w": 16,
+						"h": 0
+					}
+				},
+				{
+					"filename": "walk1.png",
+					"region": {
+						"x": 1,
+						"y": 413,
+						"w": 265,
+						"h": 392
+					},
+					"margin": {
+						"x": 5,
+						"y": 18,
+						"w": 5,
+						"h": 18
+					}
+				},
+				{
+					"filename": "walk4.png",
+					"region": {
+						"x": 257,
+						"y": 1,
+						"w": 230,
+						"h": 406
+					},
+					"margin": {
+						"x": 1,
+						"y": 4,
+						"w": 40,
+						"h": 4
+					}
+				},
+				{
+					"filename": "idle3.png",
+					"region": {
+						"x": 268,
+						"y": 409,
+						"w": 173,
+						"h": 394
+					},
+					"margin": {
+						"x": 50,
+						"y": 16,
+						"w": 97,
+						"h": 16
+					}
+				},
+				{
+					"filename": "walk9.png",
+					"region": {
+						"x": 443,
+						"y": 409,
+						"w": 223,
+						"h": 393
+					},
+					"margin": {
+						"x": 32,
+						"y": 17,
+						"w": 47,
+						"h": 17
+					}
+				},
+				{
+					"filename": "walk5.png",
+					"region": {
+						"x": 489,
+						"y": 1,
+						"w": 269,
+						"h": 405
+					},
+					"margin": {
+						"x": 1,
+						"y": 5,
+						"w": 1,
+						"h": 5
+					}
+				},
+				{
+					"filename": "walk3.png",
+					"region": {
+						"x": 668,
+						"y": 408,
+						"w": 139,
+						"h": 392
+					},
+					"margin": {
+						"x": 73,
+						"y": 18,
+						"w": 131,
+						"h": 18
+					}
+				},
+				{
+					"filename": "idle1.png",
+					"region": {
+						"x": 760,
+						"y": 1,
+						"w": 169,
+						"h": 401
+					},
+					"margin": {
+						"x": 48,
+						"y": 9,
+						"w": 101,
+						"h": 9
+					}
+				},
+				{
+					"filename": "walk7.png",
+					"region": {
+						"x": 809,
+						"y": 404,
+						"w": 187,
+						"h": 400
+					},
+					"margin": {
+						"x": 70,
+						"y": 10,
+						"w": 83,
+						"h": 10
+					}
+				},
+				{
+					"filename": "idle2.png",
+					"region": {
+						"x": 931,
+						"y": 1,
+						"w": 168,
+						"h": 390
+					},
+					"margin": {
+						"x": 54,
+						"y": 20,
+						"w": 102,
+						"h": 20
+					}
+				},
+				{
+					"filename": "walk8.png",
+					"region": {
+						"x": 1101,
+						"y": 1,
+						"w": 142,
+						"h": 389
+					},
+					"margin": {
+						"x": 70,
+						"y": 21,
+						"w": 128,
+						"h": 21
+					}
+				},
+				{
+					"filename": "walk2.png",
+					"region": {
+						"x": 998,
+						"y": 393,
+						"w": 230,
+						"h": 387
+					},
+					"margin": {
+						"x": 32,
+						"y": 23,
+						"w": 40,
+						"h": 23
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:17403ceecc8bc856277c07b5b205b452:4602eac855eea77b7185b3948cbe9a55:eea8b9b73b22d4302cf6c9e57d11b66f$"
+	}
+}
