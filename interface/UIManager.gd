@@ -15,4 +15,5 @@ func set_player(character: Character):
 	
 func observe_characters(characters):
 	for character in characters:
-		character.connect("clicked", $RightSide/Background/VBoxContainer/CharacterInfo, "_on_character_clicked")
+		character.connect("selected", $RightSide/Background/VBoxContainer/CharacterInfo, "_on_character_selected")
+		character.connect("deselected", $RightSide/Background/VBoxContainer/CharacterInfo, "_on_character_deselected")

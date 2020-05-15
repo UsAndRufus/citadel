@@ -1,0 +1,5 @@
+[gd_resource type="StreamTexture" format=2]
+
+[resource]
+flags = 4
+load_path = "res://.import/checkbox_example.png-5b3946b6f7979ec013aa3d4fdb2680d3.stex"

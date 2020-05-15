@@ -7,17 +7,18 @@ export var red: Color = Color(0.807843, 0.054902, 0.054902)
 
 export (PackedScene) var TraitInfoScene
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-func _on_character_clicked(character: Character):
+func _on_character_selected(character: Character):
 	update_character_info(character)
+	self.visible = true
+
+func _on_character_deselected(character: Character):
+	for child in $Container/TraitsContainer.get_children():
+		child.queue_free()
+	self.visible = false
 
 func update_character_info(character: Character):
 	$Container/OpinionContainer/Name.text = character.character_name
-	$Container/OpinionContainer/Rank.text = "Rank: %s" % character.stats["rank"]
+	$Container/OpinionContainer/Rank.text = "Rank: %s" % character.rank_name()
 	update_opinion(character)
 	update_traits_summary(character)
 	update_detailed_traits(character)

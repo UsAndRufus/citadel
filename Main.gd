@@ -29,6 +29,7 @@ func generate_characters(amount: int):
 		add_child(character)
 		
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _unhandled_input(event):
+	if event.is_action("select"):
+		for c in characters:
+			c.deselect()

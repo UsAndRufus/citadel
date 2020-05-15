@@ -1,7 +1,8 @@
 extends Node2D
 class_name Character
 
-signal clicked(character)
+signal selected(character)
+signal deselected(character)
 
 export(String) var character_name
 
@@ -20,6 +21,18 @@ func init(_name: String, _rank: int, _traits: Array):
 	stats["rank"] = _rank
 	traits = _traits
 
+func rank_name() -> String:
+	match stats["rank"]:
+		Rank.MAJOR:
+			return "Major"
+		Rank.CAPTAIN:
+			return "Captain"
+		Rank.CORPORAL:
+			return "Corporal"
+		Rank.PRIVATE:
+			return "Private"
+		_, Rank.CIVILIAN:
+			return "Civilian"
 
 func print():
 	print("Name: %s" % character_name)
@@ -41,11 +54,11 @@ func trait_opinions(other: Character) -> Dictionary:
 	
 	return trait_opinions
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func deselect():
+	emit_signal("deselected", self)
+	$Outline.visible = false
 
 func _on_Character_input_event(_viewport, event, _shape_idx):
 	if event.is_action("select"):
-		emit_signal("clicked", self)
+		emit_signal("selected", self)
+		$Outline.visible = true

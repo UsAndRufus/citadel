@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://interface/small_box_ninepatch.tres" type="Texture" id=2]
 [ext_resource path="res://Character/Character.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.9933, 31.9339 )
+extents = Vector2( 32, 32 )
 
 [node name="Character" type="Area2D"]
 script = ExtResource( 3 )
@@ -16,4 +17,24 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Outline" type="NinePatchRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -40.0
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 15, 15, 34, 34 )
+patch_margin_left = 17
+patch_margin_top = 17
+patch_margin_right = 17
+patch_margin_bottom = 17
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="input_event" from="." to="." method="_on_Character_input_event"]
