@@ -3,15 +3,15 @@
 		{
 			"image": "knight.png",
 			"size": {
-				"w": 1274,
-				"h": 817
+				"w": 937,
+				"h": 1216
 			},
 			"sprites": [
 				{
 					"filename": "walk 2.png",
 					"region": {
-						"x": 1,
-						"y": 1,
+						"x": 0,
+						"y": 0,
 						"w": 239,
 						"h": 395
 					},
@@ -25,8 +25,8 @@
 				{
 					"filename": "walk 8.png",
 					"region": {
-						"x": 242,
-						"y": 1,
+						"x": 239,
+						"y": 0,
 						"w": 193,
 						"h": 395
 					},
@@ -40,8 +40,8 @@
 				{
 					"filename": "walk 1.png",
 					"region": {
-						"x": 437,
-						"y": 1,
+						"x": 432,
+						"y": 0,
 						"w": 270,
 						"h": 399
 					},
@@ -55,8 +55,8 @@
 				{
 					"filename": "walk 9.png",
 					"region": {
-						"x": 709,
-						"y": 1,
+						"x": 0,
+						"y": 399,
 						"w": 249,
 						"h": 399
 					},
@@ -70,8 +70,8 @@
 				{
 					"filename": "idle 2.png",
 					"region": {
-						"x": 960,
-						"y": 1,
+						"x": 249,
+						"y": 399,
 						"w": 171,
 						"h": 403
 					},
@@ -85,8 +85,8 @@
 				{
 					"filename": "walk 3.png",
 					"region": {
-						"x": 1133,
-						"y": 1,
+						"x": 420,
+						"y": 399,
 						"w": 140,
 						"h": 403
 					},
@@ -100,8 +100,8 @@
 				{
 					"filename": "walk 7.png",
 					"region": {
-						"x": 1,
-						"y": 398,
+						"x": 560,
+						"y": 399,
 						"w": 206,
 						"h": 403
 					},
@@ -115,8 +115,8 @@
 				{
 					"filename": "idle 3.png",
 					"region": {
-						"x": 209,
-						"y": 398,
+						"x": 766,
+						"y": 399,
 						"w": 171,
 						"h": 407
 					},
@@ -130,8 +130,8 @@
 				{
 					"filename": "walk 5.png",
 					"region": {
-						"x": 382,
-						"y": 402,
+						"x": 0,
+						"y": 806,
 						"w": 269,
 						"h": 408
 					},
@@ -145,8 +145,8 @@
 				{
 					"filename": "idle 1.png",
 					"region": {
-						"x": 653,
-						"y": 402,
+						"x": 269,
+						"y": 806,
 						"w": 169,
 						"h": 410
 					},
@@ -160,8 +160,8 @@
 				{
 					"filename": "walk 4.png",
 					"region": {
-						"x": 824,
-						"y": 406,
+						"x": 438,
+						"y": 806,
 						"w": 167,
 						"h": 410
 					},
@@ -175,8 +175,8 @@
 				{
 					"filename": "walk 6.png",
 					"region": {
-						"x": 993,
-						"y": 406,
+						"x": 605,
+						"y": 806,
 						"w": 254,
 						"h": 410
 					},
@@ -193,6 +193,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "1.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:25f2495cfb59db97c1fa5bb2fbbbd5cb:80142997678acf024db615fd527588ac:58780d38a7b6d364767cb5af2f079f67$"
+		"smartupdate": "$TexturePacker:SmartUpdate:81385312a32207f85534bfa4ccf3c5ff:80142997678acf024db615fd527588ac:58780d38a7b6d364767cb5af2f079f67$"
 	}
 }

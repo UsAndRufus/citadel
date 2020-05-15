@@ -3,7 +3,7 @@
 [ext_resource path="res://Character/Worker/worker.png" type="Texture" id=1]
 
 [resource]
-flags = 4
+flags = 7
 atlas = ExtResource( 1 )
-region = Rect2( 760, 1, 169, 401 )
+region = Rect2( 722, 392, 169, 401 )
 margin = Rect2( 48, 9, 101, 9 )
