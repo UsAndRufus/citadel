@@ -1,5 +1,8 @@
 extends Control
 
+export(bool) var ShowTrustScore
+export(bool) var ShowAlignment
+
 var player_character: Character
 
 export var green: Color = Color(0.254902, 0.807843, 0.054902)
@@ -20,21 +23,41 @@ func update_character_info(character: Character):
 	$Container/TrustScoreContainer/Name.text = character.character_name
 	$Container/TrustScoreContainer/Rank.text = "Rank: %s" % character.rank_name()
 	update_alignment(character)
-	update_trust_score(character)
-	update_traits_summary(character)
+	update_trust(character)
 	update_detailed_traits(character)
 
 func update_alignment(character: Character):
 	var Alignment = $Container/TrustScoreContainer/Alignment
+	
+	if !ShowAlignment:
+		Alignment.visible = false
+		return
+	
 	Alignment.text = "Alignment: %s" % character.alignment_name()
 	
 	if character.stats["alignment"] == 1:
 		Alignment.add_color_override("font_color", red)
 	else:
 		Alignment.add_color_override("font_color", green)
+	
+	Alignment.visible = true
+	
+
+func update_trust(character: Character):
+	var Trust = $Container/TrustScoreContainer/Trust
+	
+	if !ShowTrustScore:
+		Trust.visible = false
+		return
+		
+	update_trust_score(character)
+	update_traits_summary(character)
+	
+	Trust.visible = true
 
 func update_trust_score(character: Character):
 	var Score = $Container/TrustScoreContainer/Trust/Score/Number
+
 	var trust_score_total = character.trust_of(player_character)
 	Score.text = signed_score(trust_score_total)
 	if trust_score_total > 0:
