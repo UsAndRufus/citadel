@@ -63,17 +63,35 @@ margin_top = 171.0
 margin_right = 155.0
 margin_bottom = 244.0
 
-[node name="TraitsHeader" type="Label" parent="."]
+[node name="ActionsHeader" type="Label" parent="."]
 margin_top = 248.0
 margin_right = 155.0
 margin_bottom = 286.0
 theme = ExtResource( 2 )
+text = "Actions"
+
+[node name="ActionsContainer" type="HBoxContainer" parent="."]
+margin_top = 290.0
+margin_right = 155.0
+margin_bottom = 318.0
+
+[node name="SpyButton" type="Button" parent="ActionsContainer"]
+margin_right = 42.0
+margin_bottom = 28.0
+text = "Spy"
+
+[node name="TraitsHeader" type="Label" parent="."]
+margin_top = 322.0
+margin_right = 155.0
+margin_bottom = 360.0
+theme = ExtResource( 2 )
 text = "Traits"
 
 [node name="TraitsContainer" type="VBoxContainer" parent="."]
-margin_top = 290.0
+margin_top = 364.0
 margin_right = 155.0
-margin_bottom = 290.0
+margin_bottom = 364.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="ActionsContainer/SpyButton" to="." method="_on_SpyButton_pressed"]

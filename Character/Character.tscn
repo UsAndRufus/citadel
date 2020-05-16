@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Character/Knight/knight_godot_export.sprites/walk 2.tres" type="Texture" id=1]
 [ext_resource path="res://interface/small_box_ninepatch.tres" type="Texture" id=2]
 [ext_resource path="res://Character/Character.gd" type="Script" id=3]
 [ext_resource path="res://tower/rooms/bedroom.png" type="Texture" id=4]
+[ext_resource path="res://Character/actions/SpyTimer.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
@@ -46,4 +47,12 @@ patch_margin_bottom = 17
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="SpyTimer" type="Timer" parent="Actions"]
+wait_time = 3.0
+one_shot = true
+script = ExtResource( 5 )
 [connection signal="input_event" from="." to="." method="_on_Character_input_event"]
+[connection signal="timeout" from="Actions/SpyTimer" to="Actions/SpyTimer" method="_on_SpyTimer_timeout"]

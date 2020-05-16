@@ -7,6 +7,7 @@ signal deselected(character)
 var character_id: int
 export(String) var character_name
 
+enum Actions {SPY}
 enum Rank {CIVILIAN = 0, PRIVATE = 1, CORPORAL = 2, CAPTAIN = 3, MAJOR = 4}
 enum Alignment {EVIL = 0, GOOD = 1}
 var stats = {}
@@ -26,6 +27,13 @@ func init(_character_id: int, _name: String, _rank: int, _alignment: int, _trait
 	stats["rank"] = _rank
 	stats["alignment"] = _alignment
 	traits = _traits
+
+func start_action(action: int):
+	match action:
+		Actions.SPY:
+			$Actions/SpyTimer.start()
+		_:
+			print("Unknown action")
 
 func rank_name() -> String:
 	match stats["rank"]:

@@ -10,7 +10,10 @@ export var red: Color = Color(0.807843, 0.054902, 0.054902)
 
 export (PackedScene) var TraitInfoScene
 
-func _on_character_selected(character: Character):
+var character: Character
+
+func _on_character_selected(_character: Character):
+	character = _character
 	update_character_info(character, false)
 	self.visible = true
 
@@ -18,6 +21,7 @@ func _on_character_deselected(_character: Character):
 	for child in $TraitsContainer.get_children():
 		child.queue_free()
 	self.visible = false
+	character = null
 
 func update_character_info(character: Character, is_pc: bool):
 	$TrustScoreContainer/Name.text = character.character_name
@@ -119,3 +123,6 @@ func update_detailed_traits(character: Character, is_pc: bool):
 		
 func signed_score(score: int) -> String:
 	return ("+%s" % score) if (score > 0) else str(score)
+
+func _on_SpyButton_pressed():
+	character.start_action(Character.Actions.SPY)
