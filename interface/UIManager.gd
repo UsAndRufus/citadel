@@ -19,7 +19,7 @@ func observe_characters(characters):
 
 func set_player_character(character: Character):
 	player_character = character
-	$LeftSide/Background/VBoxContainer/CharacterInfo.update_character_info(character)
+	$LeftSide/Background/VBoxContainer/CharacterInfo.update_character_info(character, true)
 	$RightSide/Background/VBoxContainer/SecretList.player_character = character
 	var secrets = character.known_secrets
 	$LeftSide/Background/VBoxContainer/SecretList.show_secrets_about(secrets)

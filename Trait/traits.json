@@ -6,7 +6,8 @@
 			"description": "Trusts characters of a higher rank",
 			"func_name": "loves",
 			"comparator": "gt",
-			"stat": "rank"
+			"stat": "rank",
+			"hidden": false,
 		},
 		{
 			"trait_id": "loves_lower_rank",
@@ -14,7 +15,8 @@
 			"description": "Trusts characters of a lower rank",
 			"func_name": "loves",
 			"comparator": "lt",
-			"stat": "rank"
+			"stat": "rank",
+			"hidden": false,
 		},
 		{
 			"trait_id": "loves_same_rank",
@@ -22,7 +24,8 @@
 			"description": "Trusts characters of the same rank",
 			"func_name": "loves",
 			"comparator": "eq",
-			"stat": "rank"
+			"stat": "rank",
+			"hidden": false,
 		},
 		{
 			"trait_id": "hates_higher_rank",
@@ -30,7 +33,8 @@
 			"description": "Distrusts characters of a higher rank",
 			"func_name": "hates",
 			"comparator": "gt",
-			"stat": "rank"
+			"stat": "rank",
+			"hidden": false,
 		},
 		{
 			"trait_id": "hates_lower_rank",
@@ -38,7 +42,8 @@
 			"description": "Distrusts characters of a lower rank",
 			"func_name": "hates",
 			"comparator": "lt",
-			"stat": "rank"
+			"stat": "rank",
+			"hidden": false,
 		},
 		{
 			"trait_id": "hates_same_rank",
@@ -46,7 +51,8 @@
 			"description": "Hate characters of the same rank",
 			"func_name": "hates",
 			"comparator": "eq",
-			"stat": "rank"
+			"stat": "rank",
+			"hidden": false,
 		},
 		{
 			"trait_id": "loves_other_evil",
@@ -54,7 +60,8 @@
 			"description": "Trusts other characters who are also evil",
 			"func_name": "super_loves",
 			"comparator": "eq",
-			"stat": "alignment"
+			"stat": "alignment",
+			"hidden": true,
 		},
 		{
 			"trait_id": "hates_other_alignment",
@@ -62,7 +69,8 @@
 			"description": "Distrusts characters with different alignment",
 			"func_name": "hates",
 			"comparator": "ne",
-			"stat": "alignment"
+			"stat": "alignment",
+			"hidden": true,
 		}
 	],
 	"lists": [

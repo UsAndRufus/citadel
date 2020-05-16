@@ -11,7 +11,7 @@ export var red: Color = Color(0.807843, 0.054902, 0.054902)
 export (PackedScene) var TraitInfoScene
 
 func _on_character_selected(character: Character):
-	update_character_info(character)
+	update_character_info(character, false)
 	self.visible = true
 
 func _on_character_deselected(_character: Character):
@@ -19,12 +19,12 @@ func _on_character_deselected(_character: Character):
 		child.queue_free()
 	self.visible = false
 
-func update_character_info(character: Character):
+func update_character_info(character: Character, is_pc: bool):
 	$TrustScoreContainer/Name.text = character.character_name
 	$TrustScoreContainer/Rank.text = "Rank: %s" % character.rank_name()
 	update_alignment(character)
 	update_trust(character)
-	update_detailed_traits(character)
+	update_detailed_traits(character, is_pc)
 
 func update_alignment(character: Character):
 	var Alignment = $TrustScoreContainer/Alignment
@@ -41,7 +41,6 @@ func update_alignment(character: Character):
 		Alignment.add_color_override("font_color", green)
 	
 	Alignment.visible = true
-	
 
 func update_trust(character: Character):
 	var TheirTrustOfYou = $TrustScoreContainer/TheirTrustOfYou
@@ -105,12 +104,14 @@ func update_traits_summary(trait_trust_scores: Dictionary, TraitsText):
 	
 	TraitsText.text = traits_text
 
-func update_detailed_traits(character: Character):
+func update_detailed_traits(character: Character, is_pc: bool):
 	var TraitsContainer = $TraitsContainer
 	for child in TraitsContainer.get_children():
 		child.queue_free()
 	
 	for trait in character.traits:
+		if trait.hidden && !is_pc:
+			continue
 		var info = TraitInfoScene.instance()
 		info.init(trait)
 		TraitsContainer.add_child(info)

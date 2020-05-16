@@ -28,7 +28,8 @@ func parse_traits_from_json(path: String) -> Array:
 			_trait["description"],
 			_trait["func_name"],
 			parse_comparator(_trait["comparator"]),
-			_trait["stat"])
+			_trait["stat"],
+			_trait["hidden"])
 		_traits[_trait["trait_id"]] = t
 	
 	return _traits

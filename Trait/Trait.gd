@@ -12,11 +12,12 @@ export(String) var description
 var func_name: String
 var comparator: int
 var stat: String
+var hidden: bool
 
 enum Comparator {GT, LT, GTE, LTE, EQ, NE}
 
 func _init(_trait_id: String, _trait_name: String, _description: String,
-		  _func_name: String, _comparator: int, _stat: String):
+		  _func_name: String, _comparator: int, _stat: String, _hidden: bool):
 	trait_id = _trait_id
 	trait_name = _trait_name
 	description = _description
@@ -24,6 +25,7 @@ func _init(_trait_id: String, _trait_name: String, _description: String,
 	func_name = _func_name
 	comparator = _comparator
 	stat = _stat
+	hidden = _hidden
 
 func trust_of(character: Character, other: Character) -> int:
 	if knows_stat(character, other):
