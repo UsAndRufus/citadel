@@ -1,24 +1,32 @@
 extends Node
 
-export(Dictionary) var traits
+var traits: Dictionary
+var lists: Dictionary
 
 const PATH = "res://Trait/traits.json"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	traits = parse_traits_from_json(PATH)
+	parse_file(PATH)
 	
 	print("Traits: ", traits)
 	
-func random_trait():
-	return traits.values()[randi() % traits.size()]
+func random_trait_from_list(list_name: String):
+	var list = lists[list_name]
+	var trait_id = list[randi() % list.size()]
+	
+	return traits[trait_id]
 	
 func get_trait(id: String) -> Trait:
 	return traits[id]
 	
-func parse_traits_from_json(path: String) -> Array:
+func parse_file(path: String):
 	var dictionary = get_dictionary_from_file(path)
 	
+	traits = parse_traits(dictionary)
+	lists = parse_lists(dictionary)
+	
+func parse_traits(dictionary: Dictionary) -> Dictionary:
 	var _traits = {}
 	
 	for _trait in dictionary["traits"]:
@@ -33,6 +41,9 @@ func parse_traits_from_json(path: String) -> Array:
 		_traits[_trait["trait_id"]] = t
 	
 	return _traits
+
+func parse_lists(dictionary: Dictionary) -> Dictionary:
+	return dictionary["lists"]
 
 func parse_comparator(comparator: String) -> int:
 	match comparator:

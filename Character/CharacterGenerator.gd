@@ -24,7 +24,9 @@ func generate_characters(amount: int) -> Array:
 		var rank = randi() % 5
 		var alignment = randi() % 2
 		
-		var traits = [$TraitParser.random_trait(),$TraitParser.random_trait()]
+		var traits = [$TraitParser.random_trait_from_list("higher_rank"),
+					  $TraitParser.random_trait_from_list("same_rank"),
+					  $TraitParser.random_trait_from_list("lower_rank")]
 		if alignment == 1:
 			traits.append($TraitParser.get_trait("loves_other_evil"))
 		traits.append($TraitParser.get_trait("hates_other_alignment"))

@@ -82,9 +82,9 @@
 			"hidden": true,
 		}
 	],
-	"lists": [
-		{"higher_rank": ["loves_higher_rank", "hates_higher_rank"]},
-		{"same_rank": ["loves_same_rank", "hates_same_rank"]},
-		{"lower_rank": ["loves_lower_rank", "hates_lower_rank"]}
-	]
+	"lists": {
+		"higher_rank": ["loves_higher_rank", "hates_higher_rank"],
+		"same_rank": ["loves_same_rank", "hates_same_rank"],
+		"lower_rank": ["loves_lower_rank", "hates_lower_rank"]
+	}
 }
