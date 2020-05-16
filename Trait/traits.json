@@ -79,7 +79,7 @@
 			"func_name": "hates",
 			"comparator": "true",
 			"stat": "spy",
-			"hidden": false,
+			"hidden": true,
 		}
 	],
 	"lists": [

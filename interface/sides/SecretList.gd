@@ -12,6 +12,9 @@ func _on_pc_secrets_known_changed():
 		_on_character_selected(subject)
 
 func show_secrets_about(secrets: Array):
+	for child in $Secrets.get_children():
+		child.queue_free()
+	
 	for secret in secrets:
 		for d in secret.details_about():
 			show_details(d)
