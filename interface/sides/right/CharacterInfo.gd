@@ -2,6 +2,7 @@ extends Control
 
 export(bool) var ShowTrustScore
 export(bool) var ShowAlignment
+export(bool) var ShowActions
 
 var player_character: Character
 
@@ -28,6 +29,7 @@ func update_character_info(character: Character, is_pc: bool):
 	$TrustScoreContainer/Rank.text = "Rank: %s" % character.rank_name()
 	update_alignment(character)
 	update_trust(character)
+	show_actions()
 	update_detailed_traits(character, is_pc)
 
 func update_alignment(character: Character):
@@ -108,6 +110,14 @@ func update_traits_summary(trait_trust_scores: Dictionary, TraitsText):
 	
 	TraitsText.text = traits_text
 
+func show_actions():
+	if ShowActions:
+		$ActionsHeader.visible = true
+		$ActionsContainer.visible = true
+	else:
+		$ActionsHeader.visible = false
+		$ActionsContainer.visible = false
+
 func update_detailed_traits(character: Character, is_pc: bool):
 	var TraitsContainer = $TraitsContainer
 	for child in TraitsContainer.get_children():
@@ -125,4 +135,4 @@ func signed_score(score: int) -> String:
 	return ("+%s" % score) if (score > 0) else str(score)
 
 func _on_SpyButton_pressed():
-	character.start_action(Character.Actions.SPY)
+	player_character.start_action(Character.Actions.SPY, character)

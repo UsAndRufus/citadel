@@ -28,10 +28,10 @@ func init(_character_id: int, _name: String, _rank: int, _alignment: int, _trait
 	stats["alignment"] = _alignment
 	traits = _traits
 
-func start_action(action: int):
+func start_action(action: int, subject):
 	match action:
 		Actions.SPY:
-			$Actions/SpyTimer.start()
+			$Actions/SpyTimer.start_action(subject)
 		_:
 			print("Unknown action")
 

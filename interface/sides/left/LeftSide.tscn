@@ -32,19 +32,19 @@ __meta__ = {
 
 [node name="CharacterInfo" parent="Background/VBoxContainer" instance=ExtResource( 2 )]
 margin_right = 448.0
-margin_bottom = 290.0
+margin_bottom = 364.0
 ShowAlignment = true
 
 [node name="SecretList" parent="Background/VBoxContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 294.0
+margin_top = 368.0
 margin_right = 448.0
-margin_bottom = 336.0
+margin_bottom = 410.0
 
 [node name="YourSecrets" parent="Background/VBoxContainer" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 340.0
+margin_top = 414.0
 margin_right = 448.0
-margin_bottom = 382.0
+margin_bottom = 456.0
