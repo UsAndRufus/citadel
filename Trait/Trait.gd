@@ -3,7 +3,7 @@ extends Node
 # Immutable representation of a Trait - there is only one of each
 class_name Trait
 
-const hidden_stats = ["alignment"]
+const hidden_stats = ["alignment", "spy"]
 
 export(String) var trait_id
 export(String) var trait_name
@@ -14,7 +14,7 @@ var comparator: int
 var stat: String
 var hidden: bool
 
-enum Comparator {GT, LT, GTE, LTE, EQ, NE}
+enum Comparator {GT, LT, GTE, LTE, EQ, NE, TRUE, FALSE}
 
 func _init(_trait_id: String, _trait_name: String, _description: String,
 		  _func_name: String, _comparator: int, _stat: String, _hidden: bool):
@@ -47,25 +47,25 @@ func knows_stat(character: Character, other: Character) -> bool:
 func hidden_stat():
 	return hidden_stats.has(stat)
 
-func super_loves(stat1: int, stat2: int) -> int:
+func super_loves(stat1, stat2) -> int:
 	if compare(stat1, stat2):
 		return 50
 	else:
 		return 0
 
-func loves(stat1: int, stat2: int) -> int:
+func loves(stat1, stat2) -> int:
 	if compare(stat1, stat2):
 		return 10
 	else:
 		return 0
 
-func hates(stat1: int, stat2: int) -> int:
+func hates(stat1, stat2) -> int:
 	if compare(stat1, stat2):
 		return -10
 	else:
 		return 0
 
-func compare(stat1: int, stat2: int) -> bool:
+func compare(stat1, stat2) -> bool:
 	match comparator:
 		Comparator.GT:
 			return stat1 > stat2
@@ -79,6 +79,10 @@ func compare(stat1: int, stat2: int) -> bool:
 			return stat1 == stat2
 		Comparator.NE:
 			return stat1 != stat2
+		Comparator.TRUE:
+			return stat1
+		Comparator.FALSE:
+			return !stat1
 		_:
 			return false
 
@@ -97,6 +101,10 @@ func _to_string():
 			cmp = "=="
 		Comparator.NE:
 			cmp = "!="
+		Comparator.TRUE:
+			cmp = "is true"
+		Comparator.FALSE:
+			cmp = "is false"
 		_:
 			cmp = "MISSING_COMPARATOR"
 	

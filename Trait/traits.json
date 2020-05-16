@@ -71,6 +71,15 @@
 			"comparator": "ne",
 			"stat": "alignment",
 			"hidden": true,
+		},
+		{
+			"trait_id": "hates_spies",
+			"trait_name": "Suspicious",
+			"description": "Distrusts characters that are known spies",
+			"func_name": "hates",
+			"comparator": "true",
+			"stat": "spy",
+			"hidden": false,
 		}
 	],
 	"lists": [

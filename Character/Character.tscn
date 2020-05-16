@@ -53,6 +53,5 @@ __meta__ = {
 [node name="SpyTimer" type="Timer" parent="Actions"]
 one_shot = true
 script = ExtResource( 5 )
-chance = 1.0
 [connection signal="input_event" from="." to="." method="_on_Character_input_event"]
 [connection signal="timeout" from="Actions/SpyTimer" to="Actions/SpyTimer" method="_on_SpyTimer_timeout"]

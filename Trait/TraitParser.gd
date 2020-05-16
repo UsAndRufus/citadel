@@ -48,6 +48,10 @@ func parse_comparator(comparator: String) -> int:
 			return Trait.Comparator.EQ
 		"ne":
 			return Trait.Comparator.NE
+		"true":
+			return Trait.Comparator.TRUE
+		"false":
+			return Trait.Comparator.FALSE
 		_:
 			return -1
 

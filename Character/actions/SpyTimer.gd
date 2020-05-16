@@ -13,20 +13,39 @@ func start_action(_actor, _subject):
 func _on_SpyTimer_timeout():
 	print("Spy action on %s finished!" % subject.character_name)
 	
-	give_secret()
+	attempt_action()
 
-func give_secret():
+func attempt_action():
 	if randf() < chance:
 		print("action success")
-		var available = available_secrets()
-		if available.size() > 0:
-			var secret = available[randi() % available.size()]
-			actor.add_known_secret(secret)
-			print("secret granted")
-		else:
-			print("no secret to grant")
+		give_secret()
 	else:
 		print("action failed")
+		caught_spying()
+
+func give_secret():
+	var available = available_secrets()
+	if available.size() > 0:
+		var secret = available[randi() % available.size()]
+		actor.add_known_secret(secret)
+		print("secret granted")
+	else:
+		print("no secret to grant")
+
+func caught_spying():
+	# Add secret about actor that subject knows
+	var secret = Secret.new([actor], "spy", 
+							"%s was caught spying",
+							[subject]) 
+	
+	#	actor.add_known_secret(secret)
+	actor.add_secret_about(secret)
+	actor.stats["spy"] = true
+	subject.add_known_secret(secret)
+	print("caught")
+	
+	for secret in subject.known_secrets:
+		print(secret.description)
 
 func available_secrets() -> Array:
 	var available = []

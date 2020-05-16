@@ -28,6 +28,7 @@ func generate_characters(amount: int) -> Array:
 		if alignment == 1:
 			traits.append($TraitParser.get_trait("loves_other_evil"))
 		traits.append($TraitParser.get_trait("hates_other_alignment"))
+		traits.append($TraitParser.get_trait("hates_spies"))
 		
 		var character = CharacterScene.instance()
 		character.init(i, names[i], rank, alignment, traits)

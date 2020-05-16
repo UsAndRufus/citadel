@@ -27,5 +27,10 @@ func about(character, _stat: String) -> bool:
 func is_known_by(character) -> bool:
 	return subjects.has(character) || known_by.has(character)
 
+func add_subject(character):
+	if !subjects.has(character):
+		subjects.append(character)
+
 func add_known_by(character):
-	known_by.append(character)
+	if !known_by.has(character):
+		known_by.append(character)

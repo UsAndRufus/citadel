@@ -32,5 +32,7 @@ func set_player_character(character: Character):
 	$RightSide/Background/VBoxContainer/SecretList.player_character = character
 
 func observe_player_character():
+	player_character.connect("secrets_about_changed", $LeftSide/Background/VBoxContainer/YourSecrets, "_on_pc_secrets_about_changed")
+		
 	player_character.connect("secrets_known_changed", $LeftSide/Background/VBoxContainer/SecretList, "_on_pc_secrets_known_changed")
 	player_character.connect("secrets_known_changed", $RightSide/Background/VBoxContainer/SecretList, "_on_pc_secrets_known_changed")

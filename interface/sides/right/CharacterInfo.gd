@@ -15,14 +15,25 @@ var character: Character
 
 func _on_character_selected(_character: Character):
 	character = _character
+	
+	character.connect("secrets_known_changed", self, "_on_character_updated")
+	character.connect("secrets_about_changed", self, "_on_character_updated")
+	
 	update_character_info(character, false)
 	self.visible = true
 
 func _on_character_deselected(_character: Character):
+	if character != null:
+		character.disconnect("secrets_known_changed", self, "_on_character_updated")
+		character.disconnect("secrets_about_changed", self, "_on_character_updated")
+	
 	for child in $TraitsContainer.get_children():
 		child.queue_free()
 	self.visible = false
 	character = null
+
+func _on_character_updated():
+	update_character_info(character, false)
 
 func update_character_info(character: Character, is_pc: bool):
 	$TrustScoreContainer/Name.text = character.character_name
