@@ -3,7 +3,7 @@ class_name Secret
 
 var subjects = []
 var stat: String
-var description: String
+var desc: String
 var known_by = []
 
 func _init(_subjects: Array, _stat: String, _description: String, _known_by: Array):
@@ -11,8 +11,14 @@ func _init(_subjects: Array, _stat: String, _description: String, _known_by: Arr
 		print("Error - secret must be about someone")
 	subjects = _subjects
 	stat = _stat
-	description = _description
+	desc = _description
 	known_by = _known_by
+
+func description() -> Array:
+	var description = []
+	for c in subjects:
+		description.append([c, desc % c.character_name])
+	return description
 
 func about(character: Character, _stat: String) -> bool:
 	return subjects.has(character) && stat == _stat

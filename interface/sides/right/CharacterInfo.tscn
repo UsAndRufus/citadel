@@ -6,11 +6,9 @@
 [ext_resource path="res://interface/sides/right/CharacterInfo.gd" type="Script" id=4]
 [ext_resource path="res://interface/sides/TraitInfo.tscn" type="PackedScene" id=5]
 
-[node name="CharacterInfo" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -0.717377
-margin_bottom = -0.717407
+[node name="CharacterInfo" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
 theme = ExtResource( 1 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -18,27 +16,20 @@ __meta__ = {
 }
 TraitInfoScene = ExtResource( 5 )
 
-[node name="Container" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TrustScoreContainer" type="VBoxContainer" parent="Container"]
+[node name="TrustScoreContainer" type="VBoxContainer" parent="."]
 margin_right = 155.0
 margin_bottom = 244.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="Label" parent="Container/TrustScoreContainer"]
+[node name="Name" type="Label" parent="TrustScoreContainer"]
 margin_right = 155.0
 margin_bottom = 38.0
 theme = ExtResource( 2 )
 text = "Frederick"
 
-[node name="Rank" type="Label" parent="Container/TrustScoreContainer"]
+[node name="Rank" type="Label" parent="TrustScoreContainer"]
 margin_top = 42.0
 margin_right = 155.0
 margin_bottom = 64.0
@@ -47,7 +38,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Alignment" type="Label" parent="Container/TrustScoreContainer"]
+[node name="Alignment" type="Label" parent="TrustScoreContainer"]
 margin_top = 68.0
 margin_right = 155.0
 margin_bottom = 90.0
@@ -56,7 +47,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TheirTrustOfYou" parent="Container/TrustScoreContainer" instance=ExtResource( 3 )]
+[node name="TheirTrustOfYou" parent="TrustScoreContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
@@ -64,7 +55,7 @@ margin_top = 94.0
 margin_right = 155.0
 margin_bottom = 167.0
 
-[node name="YourTrustOfThem" parent="Container/TrustScoreContainer" instance=ExtResource( 3 )]
+[node name="YourTrustOfThem" parent="TrustScoreContainer" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
@@ -72,14 +63,14 @@ margin_top = 171.0
 margin_right = 155.0
 margin_bottom = 244.0
 
-[node name="TraitsHeader" type="Label" parent="Container"]
+[node name="TraitsHeader" type="Label" parent="."]
 margin_top = 248.0
 margin_right = 155.0
 margin_bottom = 286.0
 theme = ExtResource( 2 )
 text = "Traits"
 
-[node name="TraitsContainer" type="VBoxContainer" parent="Container"]
+[node name="TraitsContainer" type="VBoxContainer" parent="."]
 margin_top = 290.0
 margin_right = 155.0
 margin_bottom = 290.0

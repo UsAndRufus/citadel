@@ -33,7 +33,7 @@ func trust_of(character: Character, other: Character) -> int:
 
 func knows_stat(character: Character, other: Character) -> bool:
 	# IE if stat is public/visible
-	if !hidden_stats.has(stat):
+	if !hidden_stat():
 		return true
 	else:
 		for secret in character.known_secrets:
@@ -41,7 +41,10 @@ func knows_stat(character: Character, other: Character) -> bool:
 				return true
 	
 	return false
-	
+
+func hidden_stat():
+	return hidden_stats.has(stat)
+
 func super_loves(stat1: int, stat2: int) -> int:
 	if compare(stat1, stat2):
 		return 50

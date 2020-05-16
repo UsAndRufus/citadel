@@ -15,19 +15,19 @@ func _on_character_selected(character: Character):
 	self.visible = true
 
 func _on_character_deselected(_character: Character):
-	for child in $Container/TraitsContainer.get_children():
+	for child in $TraitsContainer.get_children():
 		child.queue_free()
 	self.visible = false
 
 func update_character_info(character: Character):
-	$Container/TrustScoreContainer/Name.text = character.character_name
-	$Container/TrustScoreContainer/Rank.text = "Rank: %s" % character.rank_name()
+	$TrustScoreContainer/Name.text = character.character_name
+	$TrustScoreContainer/Rank.text = "Rank: %s" % character.rank_name()
 	update_alignment(character)
 	update_trust(character)
 	update_detailed_traits(character)
 
 func update_alignment(character: Character):
-	var Alignment = $Container/TrustScoreContainer/Alignment
+	var Alignment = $TrustScoreContainer/Alignment
 	
 	if !ShowAlignment:
 		Alignment.visible = false
@@ -44,8 +44,8 @@ func update_alignment(character: Character):
 	
 
 func update_trust(character: Character):
-	var TheirTrustOfYou = $Container/TrustScoreContainer/TheirTrustOfYou
-	var YourTrustOfThem = $Container/TrustScoreContainer/YourTrustOfThem
+	var TheirTrustOfYou = $TrustScoreContainer/TheirTrustOfYou
+	var YourTrustOfThem = $TrustScoreContainer/YourTrustOfThem
 	
 	if !ShowTrustScore:
 		TheirTrustOfYou.visible = false
@@ -61,13 +61,13 @@ func update_trust(character: Character):
 	YourTrustOfThem.visible = true
 
 func update_their_trust_score(character: Character):
-	var Score = $Container/TrustScoreContainer/TheirTrustOfYou/Score
+	var Score = $TrustScoreContainer/TheirTrustOfYou/Score
 	var trust_score_total = character.trust_of(player_character)
 	
 	update_trust_score(trust_score_total, "Their trust of you: ", Score)
 
 func update_your_trust_score(character: Character):
-	var Score = $Container/TrustScoreContainer/YourTrustOfThem/Score
+	var Score = $TrustScoreContainer/YourTrustOfThem/Score
 	var trust_score_total = player_character.trust_of(character)
 	
 	update_trust_score(trust_score_total, "Your trust of them: ", Score)
@@ -85,13 +85,13 @@ func update_trust_score(trust_score_total: int, title: String, Score):
 	Score.get_node("Text").text = title
 
 func update_their_traits_summary(character: Character):
-	var TraitsText = $Container/TrustScoreContainer/TheirTrustOfYou/Traits
+	var TraitsText = $TrustScoreContainer/TheirTrustOfYou/Traits
 	var trait_trust_scores = character.trait_trust_scores(player_character)
 	
 	update_traits_summary(trait_trust_scores, TraitsText)
 
 func update_your_traits_summary(character: Character):
-	var TraitsText = $Container/TrustScoreContainer/YourTrustOfThem/Traits
+	var TraitsText = $TrustScoreContainer/YourTrustOfThem/Traits
 	var trait_trust_scores = player_character.trait_trust_scores(character)
 	
 	update_traits_summary(trait_trust_scores, TraitsText)
@@ -106,7 +106,7 @@ func update_traits_summary(trait_trust_scores: Dictionary, TraitsText):
 	TraitsText.text = traits_text
 
 func update_detailed_traits(character: Character):
-	var TraitsContainer = $Container/TraitsContainer
+	var TraitsContainer = $TraitsContainer
 	for child in TraitsContainer.get_children():
 		child.queue_free()
 	

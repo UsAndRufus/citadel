@@ -64,7 +64,12 @@ func trust_of(other: Character) -> int:
 func trait_trust_scores(other: Character) -> Dictionary:
 	var trait_trust_scores = {}
 	for t in traits:
-		trait_trust_scores[t.trait_name] = t.trust_of(self, other)
+		var name
+		if t.hidden_stat():
+			name = "%s (secret)" % t.stat.capitalize()
+		else:
+			name = t.trait_name
+		trait_trust_scores[name] = t.trust_of(self, other)
 	
 	return trait_trust_scores
 
