@@ -24,7 +24,10 @@ func _init(_trait_id: String, _trait_name: String, _description: String,
 	stat = _stat
 	
 func trust_of(character: Character, other: Character) -> int:
-	return call(func_name, other.stats[stat], character.stats[stat]) as int
+	if SecretManager.knows_stat(character, other, stat):
+		return call(func_name, other.stats[stat], character.stats[stat]) as int
+	else:
+		return 0
 	
 func super_loves(stat1: int, stat2: int) -> int:
 	if compare(stat1, stat2):

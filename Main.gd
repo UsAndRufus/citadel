@@ -9,6 +9,7 @@ func _ready():
 	generate_characters()
 	
 	for child in characters:
+		print("\n")
 		child.print()
 		for other in characters:
 			var text = "%s's opinion of %s: %s" % [child.character_name, other.character_name, child.trust_of(other)]

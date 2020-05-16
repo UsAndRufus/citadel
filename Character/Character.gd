@@ -45,7 +45,8 @@ func alignment_name() -> String:
 
 func print():
 	print("Name: %s" % character_name)
-	print("Rank: %s" % stats["rank"])
+	print("Rank: %s" % rank_name())
+	print("Alignment: ", alignment_name())
 	for t in traits:
 		print(t.trait_id)
 

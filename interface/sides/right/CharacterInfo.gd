@@ -44,38 +44,66 @@ func update_alignment(character: Character):
 	
 
 func update_trust(character: Character):
-	var Trust = $Container/TrustScoreContainer/Trust
+	var TheirTrustOfYou = $Container/TrustScoreContainer/TheirTrustOfYou
+	var YourTrustOfThem = $Container/TrustScoreContainer/YourTrustOfThem
 	
 	if !ShowTrustScore:
-		Trust.visible = false
+		TheirTrustOfYou.visible = false
+		YourTrustOfThem.visible = false
 		return
 		
-	update_trust_score(character)
-	update_traits_summary(character)
+	update_their_trust_score(character)
+	update_your_trust_score(character)
+	update_their_traits_summary(character)
+	update_your_traits_summary(character)
 	
-	Trust.visible = true
+	TheirTrustOfYou.visible = true
+	YourTrustOfThem.visible = true
 
-func update_trust_score(character: Character):
-	var Score = $Container/TrustScoreContainer/Trust/Score/Number
-
+func update_their_trust_score(character: Character):
+	var Score = $Container/TrustScoreContainer/TheirTrustOfYou/Score
 	var trust_score_total = character.trust_of(player_character)
-	Score.text = signed_score(trust_score_total)
-	if trust_score_total > 0:
-		Score.add_color_override("font_color", green)
-	elif trust_score_total < 0:
-		Score.add_color_override("font_color", red)
-	else:
-		Score.set("custom_colors/font_color", null)
+	
+	update_trust_score(trust_score_total, "Their trust of you: ", Score)
 
-func update_traits_summary(character: Character):
-	var traits_text = ""
+func update_your_trust_score(character: Character):
+	var Score = $Container/TrustScoreContainer/YourTrustOfThem/Score
+	var trust_score_total = player_character.trust_of(character)
+	
+	update_trust_score(trust_score_total, "Your trust of them: ", Score)
+
+func update_trust_score(trust_score_total: int, title: String, Score):
+	var ScoreNumber = Score.get_node("Number")
+	ScoreNumber.text = signed_score(trust_score_total)
+	if trust_score_total > 0:
+		ScoreNumber.add_color_override("font_color", green)
+	elif trust_score_total < 0:
+		ScoreNumber.add_color_override("font_color", red)
+	else:
+		ScoreNumber.set("custom_colors/font_color", null)
+	
+	Score.get_node("Text").text = title
+
+func update_their_traits_summary(character: Character):
+	var TraitsText = $Container/TrustScoreContainer/TheirTrustOfYou/Traits
 	var trait_trust_scores = character.trait_trust_scores(player_character)
+	
+	update_traits_summary(trait_trust_scores, TraitsText)
+
+func update_your_traits_summary(character: Character):
+	var TraitsText = $Container/TrustScoreContainer/YourTrustOfThem/Traits
+	var trait_trust_scores = player_character.trait_trust_scores(character)
+	
+	update_traits_summary(trait_trust_scores, TraitsText)
+
+func update_traits_summary(trait_trust_scores: Dictionary, TraitsText):
+	var traits_text = ""
 	for name in trait_trust_scores:
 		var score = trait_trust_scores[name]
 		if  score != 0:
 			traits_text += " - %s (%s)\n" % [name, signed_score(score)]
 	
-	$Container/TrustScoreContainer/Trust/Traits.text = traits_text
+	TraitsText.text = traits_text
 
 func update_detailed_traits(character: Character):
 	var TraitsContainer = $Container/TraitsContainer

@@ -27,7 +27,7 @@ func generate_characters(amount: int) -> Array:
 		var traits = [$TraitParser.random_trait(),$TraitParser.random_trait()]
 		if alignment == 1:
 			traits.append($TraitParser.get_trait("loves_other_evil"))
-#		traits.append($TraitParser.get_trait("hates_other_alignment"))
+		traits.append($TraitParser.get_trait("hates_other_alignment"))
 		
 		var character = CharacterScene.instance()
 		character.init(names[i], rank, alignment, traits)
@@ -36,7 +36,9 @@ func generate_characters(amount: int) -> Array:
 	return characters
 
 func generate_player_character() -> Character:
-	var traits = [$TraitParser.random_trait(),$TraitParser.random_trait()]
+#	var traits = [$TraitParser.random_trait(),$TraitParser.random_trait()]
+	var traits = []
+	traits.append($TraitParser.get_trait("hates_other_alignment"))
 	var rank = 1
 	var alignment = 0
 	

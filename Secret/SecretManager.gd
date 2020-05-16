@@ -1,7 +1,10 @@
 extends Node
 
+var hidden_stats = ["alignment"]
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func knows_stat(character: Character, other: Character, stat: String) -> bool:
+	return true
+#	if !hidden_stats.has(stat):
+#		return true
+#	else:
+#		return false
