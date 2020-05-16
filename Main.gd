@@ -1,19 +1,12 @@
 extends Node
 
-export (PackedScene) var CharacterScene
-
 export(Array) var characters = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	print("$TraitParser.traits count: %s" % $TraitParser.traits.size())
-	generate_characters(4)
-	generate_secrets()
 	
-	$Window/UI.set_player(characters[0])
-	
-	$Window/UI.observe_characters(characters)
+	generate_characters()
 	
 	for child in characters:
 		child.print()
@@ -21,28 +14,13 @@ func _ready():
 			var text = "%s's opinion of %s: %s" % [child.character_name, other.character_name, child.trust_of(other)]
 			print(text)
 
-func generate_characters(amount: int):
-	var names = ["Alice", "Bob", "Fred", "Jemimah"]
-	for i in range(amount):
-		var rank = randi() % 5
-		var alignment = randi() % 2
-		
-		var traits = [$TraitParser.random_trait(),$TraitParser.random_trait()]
-		if alignment == 1:
-			traits.append($TraitParser.get_trait("loves_other_evil"))
-		traits.append($TraitParser.get_trait("hates_other_alignment"))
-		
-		var character = CharacterScene.instance()
-		character.init(names[i], rank, alignment, traits)
-		characters.append(character)
-		add_child(character)
-
-func generate_secrets():
-	var secret = Secret.new([characters[0]], "Alice likes cheese", [characters[1]])
-	
-	print("secret: ", secret.description)
+func generate_characters():
+	characters = $CharacterGenerator.generate(4)
 	for c in characters:
-		print("%s knows secret: %s" % [c.character_name, str(secret.is_known_by(c))])
+		add_child(c)
+	
+	$Window/UI.set_player(characters[0])
+	$Window/UI.observe_characters(characters)
 
 func _unhandled_input(event):
 	if event.is_action("select"):
