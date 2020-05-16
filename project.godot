@@ -36,10 +36,6 @@ config/name="Citadel"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-SecretManager="*res://Secret/SecretManager.gd"
-
 [display]
 
 window/size/width=1920

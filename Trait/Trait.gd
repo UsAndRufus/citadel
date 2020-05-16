@@ -3,6 +3,8 @@ extends Node
 # Immutable representation of a Trait - there is only one of each
 class_name Trait
 
+const hidden_stats = ["alignment"]
+
 export(String) var trait_id
 export(String) var trait_name
 export(String) var description
@@ -22,12 +24,23 @@ func _init(_trait_id: String, _trait_name: String, _description: String,
 	func_name = _func_name
 	comparator = _comparator
 	stat = _stat
-	
+
 func trust_of(character: Character, other: Character) -> int:
-	if SecretManager.knows_stat(character, other, stat):
+	if knows_stat(character, other):
 		return call(func_name, other.stats[stat], character.stats[stat]) as int
 	else:
 		return 0
+
+func knows_stat(character: Character, other: Character) -> bool:
+	# IE if stat is public/visible
+	if !hidden_stats.has(stat):
+		return true
+	else:
+		for secret in character.known_secrets:
+			if secret.about(other, stat):
+				return true
+	
+	return false
 	
 func super_loves(stat1: int, stat2: int) -> int:
 	if compare(stat1, stat2):

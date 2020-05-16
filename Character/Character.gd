@@ -4,6 +4,7 @@ class_name Character
 signal selected(character)
 signal deselected(character)
 
+var character_id: int
 export(String) var character_name
 
 enum Rank {CIVILIAN = 0, PRIVATE = 1, CORPORAL = 2, CAPTAIN = 3, MAJOR = 4}
@@ -11,13 +12,16 @@ enum Alignment {EVIL = 0, GOOD = 1}
 var stats = {}
 
 var traits = []
+var secrets_about = []
+var known_secrets = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position.x = clamp(randi() % 1920, 580+100, 1240)
 	position.y = clamp(randi() % 1080, 100, 880)
 
-func init(_name: String, _rank: int, _alignment: int, _traits: Array):
+func init(_character_id: int, _name: String, _rank: int, _alignment: int, _traits: Array):
+	character_id = _character_id
 	character_name = _name
 	stats["rank"] = _rank
 	stats["alignment"] = _alignment

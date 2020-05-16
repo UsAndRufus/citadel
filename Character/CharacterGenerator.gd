@@ -30,7 +30,7 @@ func generate_characters(amount: int) -> Array:
 		traits.append($TraitParser.get_trait("hates_other_alignment"))
 		
 		var character = CharacterScene.instance()
-		character.init(names[i], rank, alignment, traits)
+		character.init(i, names[i], rank, alignment, traits)
 		characters.append(character)
 		
 	return characters
@@ -43,13 +43,15 @@ func generate_player_character() -> Character:
 	var alignment = 0
 	
 	var character = CharacterScene.instance()
-	character.init(names[0], rank, alignment, traits)
+	character.init(0, names[0], rank, alignment, traits)
 	return character
 
 func generate_secrets(characters: Array):
-	var trait = $TraitParser.get_trait("hates_other_alignment")
 	characters[1].stats["alignment"] = 1
-	var secret = Secret.new([characters[1]], "%s is evil" % characters[1].character_name, trait, [characters[0]])
+	var secret = Secret.new([characters[1]], "alignment", "%s is evil" % characters[1].character_name, [characters[0]])
+	
+	characters[1].secrets_about.append(secret)
+	characters[0].known_secrets.append(secret)
 	
 	print("secret: ", secret.description)
 	for c in characters:
