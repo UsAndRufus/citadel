@@ -1,4 +1,6 @@
 extends Node
+
+# Immutable representation of a Trait - there is only one of each
 class_name Trait
 
 export(String) var trait_id

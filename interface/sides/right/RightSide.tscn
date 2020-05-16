@@ -37,3 +37,4 @@ margin_top = 0.0
 margin_right = 480.0
 margin_bottom = 0.0
 ShowTrustScore = true
+ShowAlignment = true
