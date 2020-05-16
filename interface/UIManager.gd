@@ -8,6 +8,7 @@ func _ready():
 	
 func set_player(character: Character):
 	set_player_character(character)
+	observe_player_character()
 	
 func observe_characters(characters):
 	for character in characters:
@@ -21,6 +22,7 @@ func set_player_character(character: Character):
 	
 	# Left Side
 	var secrets = character.known_secrets
+	$LeftSide/Background/VBoxContainer/SecretList.player_character = character
 	$LeftSide/Background/VBoxContainer/SecretList.show_secrets_about(secrets)
 	$LeftSide/Background/VBoxContainer/YourSecrets.show_secrets(character)
 	$LeftSide/Background/VBoxContainer/CharacterInfo.update_character_info(character, true)
@@ -28,4 +30,7 @@ func set_player_character(character: Character):
 	# Right Side
 	$RightSide/Background/VBoxContainer/CharacterInfo.player_character = character
 	$RightSide/Background/VBoxContainer/SecretList.player_character = character
-	
+
+func observe_player_character():
+	player_character.connect("secrets_known_changed", $LeftSide/Background/VBoxContainer/SecretList, "_on_pc_secrets_known_changed")
+	player_character.connect("secrets_known_changed", $RightSide/Background/VBoxContainer/SecretList, "_on_pc_secrets_known_changed")

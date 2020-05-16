@@ -1,6 +1,7 @@
 extends Node2D
 class_name Character
 
+signal secrets_known_changed
 signal selected(character)
 signal deselected(character)
 
@@ -31,9 +32,14 @@ func init(_character_id: int, _name: String, _rank: int, _alignment: int, _trait
 func start_action(action: int, subject):
 	match action:
 		Actions.SPY:
-			$Actions/SpyTimer.start_action(subject)
+			$Actions/SpyTimer.start_action(self, subject)
 		_:
 			print("Unknown action")
+
+func add_known_secret(secret: Secret):
+	known_secrets.append(secret)
+	secret.add_known_by(self)
+	emit_signal("secrets_known_changed")
 
 func rank_name() -> String:
 	match stats["rank"]:

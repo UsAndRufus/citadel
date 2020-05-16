@@ -3,6 +3,13 @@ extends Control
 export (PackedScene) var SecretInfoScene
 
 var player_character
+var subject
+
+func _on_pc_secrets_known_changed():
+	if subject == null:
+		show_secrets_about(player_character.known_secrets)
+	else:
+		_on_character_selected(subject)
 
 func show_secrets_about(secrets: Array):
 	for secret in secrets:
@@ -14,8 +21,8 @@ func show_details(detail: Dictionary):
 	info.init(detail)
 	$Secrets.add_child(info)
 
-
 func _on_character_selected(character: Character):
+	subject = character
 	var known_secrets = []
 	for s in character.secrets_about:
 		if s.is_known_by(player_character):
@@ -29,3 +36,4 @@ func _on_character_deselected(_character: Character):
 	for child in $Secrets.get_children():
 		child.queue_free()
 	self.visible = false
+	subject = null

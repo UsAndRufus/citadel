@@ -21,11 +21,11 @@ func details_about() -> Array:
 	
 	return details
 
-func about(character: Character, _stat: String) -> bool:
+func about(character, _stat: String) -> bool:
 	return subjects.has(character) && stat == _stat
 
-func is_known_by(character: Character) -> bool:
+func is_known_by(character) -> bool:
 	return subjects.has(character) || known_by.has(character)
 
-func add_known_by(character: Character):
+func add_known_by(character):
 	known_by.append(character)
