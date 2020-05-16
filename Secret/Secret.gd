@@ -17,12 +17,9 @@ func _init(_subjects: Array, _stat: String, _description: String, _known_by: Arr
 func details_about() -> Array:
 	var details = []
 	for c in subjects:
-		details.append({"about": c, "description": description % c.character_name})
+		details.append({"about": c, "description": (description % c.character_name)})
 	
 	return details
-
-func details_known_by():
-	pass
 
 func about(character: Character, _stat: String) -> bool:
 	return subjects.has(character) && stat == _stat
