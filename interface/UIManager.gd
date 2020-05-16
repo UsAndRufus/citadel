@@ -23,3 +23,4 @@ func set_player_character(character: Character):
 	$RightSide/Background/VBoxContainer/SecretList.player_character = character
 	var secrets = character.known_secrets
 	$LeftSide/Background/VBoxContainer/SecretList.show_secrets_about(secrets)
+	$LeftSide/Background/VBoxContainer/YourSecrets.show_secrets(character)

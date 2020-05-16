@@ -48,11 +48,21 @@ func generate_player_character() -> Character:
 
 func generate_secrets(characters: Array):
 	characters[1].stats["alignment"] = 1
-	var secret = Secret.new([characters[1]], "alignment", "%s is evil", [characters[0]])
 	
+	var secret = Secret.new([characters[1]], "alignment", "%s is evil", [characters[0]])
+
 	characters[1].secrets_about.append(secret)
 	characters[0].known_secrets.append(secret)
-	
-	print("secret: ", secret.description)
+
+	print("secret: ", secret.description % characters[1].character_name)
 	for c in characters:
 		print("%s knows secret: %s" % [c.character_name, str(secret.is_known_by(c))])
+	print("\n")
+
+	var pc_secret = Secret.new([characters[0]], "alignment", "%s is good", [characters[1]])
+	characters[0].secrets_about.append(pc_secret)
+	characters[1].known_secrets.append(pc_secret)
+
+	print("secret: ", pc_secret.description % characters[0].character_name)
+	for c in characters:
+		print("%s knows secret: %s" % [c.character_name, str(pc_secret.is_known_by(c))])

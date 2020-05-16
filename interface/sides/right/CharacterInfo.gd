@@ -86,13 +86,13 @@ func update_trust_score(trust_score_total: int, title: String, Score):
 
 func update_their_traits_summary(character: Character):
 	var TraitsText = $TrustScoreContainer/TheirTrustOfYou/Traits
-	var trait_trust_scores = character.trait_trust_scores(player_character)
+	var trait_trust_scores = character.trait_trust_scores(player_character, player_character)
 	
 	update_traits_summary(trait_trust_scores, TraitsText)
 
 func update_your_traits_summary(character: Character):
 	var TraitsText = $TrustScoreContainer/YourTrustOfThem/Traits
-	var trait_trust_scores = player_character.trait_trust_scores(character)
+	var trait_trust_scores = player_character.trait_trust_scores(character, player_character)
 	
 	update_traits_summary(trait_trust_scores, TraitsText)
 
