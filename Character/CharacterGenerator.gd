@@ -53,6 +53,6 @@ func generate_secrets(characters: Array):
 	characters[1].secrets_about.append(secret)
 	characters[0].known_secrets.append(secret)
 	
-	print("secret: ", secret.description())
+	print("secret: ", secret.description)
 	for c in characters:
 		print("%s knows secret: %s" % [c.character_name, str(secret.is_known_by(c))])

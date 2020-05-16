@@ -1,9 +1,9 @@
 extends Control
 
 var about
-var text
+var description
 
-func init(description: Array):
-	about = description[0]
-	text = description[1]
-	$Description.text = text
+func init(details: Dictionary):
+	about = details["about"]
+	description = details["description"]
+	$Description.text = description
